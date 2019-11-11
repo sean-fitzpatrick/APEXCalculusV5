@@ -141,64 +141,73 @@
       We practice the technique by solving the three differential equations listed in the separable column above,
       and conclude by revisiting and finding the general solution to the logistic differential equation from <xref ref="sec_Graphical_Numerical">Section</xref>
     </p>
-    <p>
-      \appendixexample{ex_separable_DE}{Solving a Separable Differential Equation}{ Find the general solution to the differential equation
-      <m>\yp = x^2y</m>.} {Using the informal solution method outlined above,
-      we treat <m>\displaystyle \frac{dy}{dx}</m> as a fraction,
-      and write the separated form of the differential equation as
-      <me>
-        \frac{dy}{y} = x^2 dx
-      </me>.
-    </p>
-    <p>
-      Integrating the left hand side of the equation with respect to <m>y</m> and the right hand side of the equation with respect to <m>x</m> yields
-      <me>
-        \ln |y| = \frac{1}{3}x^3 + C
-      </me>.
-    </p>
-    <p>
-      This is an implicit form of the solution to the differential equation.
-      Solving for <m>y</m> yields an explicit form for the solution.
-      Exponentiating both sides, we have
-      <me>
-        |y| = e^{x^3/3 + C} = e^{x^3/3}e^C
-      </me>.
-    </p>
-    <p>
-      This solution is a bit problematic.
-      First, the absolute value makes the solution difficult to understand.
-      The second issue comes from our desire to find the
-      <em>general solution.</em>
-      Recall that a general solution includes all possible solutions to the differential equation.
-      In other words, for any given initial condition,
-      the general solution must include the solution to that specific initial value problem.
-      We can often satisfy any given initial condition by choosing an appropriate <m>C</m> value.
-      When solving separable equations, though,
-      it is possible to lose solutions that have the form <m>y =</m> constant.
-      Notice that <m>y=0</m> solves the differential equation,
-      but it is not possible to choose a finite <m>C</m> to make our solution look like <m>y=0</m>.
-      Our solution cannot solve the initial value problem
-      <m>\displaystyle \frac{dy}{dx} = x^2y</m>, with <m>y(a) = 0</m>
-      (where <m>a</m> is any value).
-      Thus, we haven't actually found a general solution to the problem.
-      We can clean up the solution and recover the missing solution with a bit of clever thought.
-    </p>
-    <p>
-      Recall the formal definition of the absolute value:
-      <m>|y| = y</m> if <m>y \geq 0</m> and <m>|y| =  -y</m> if <m>y \lt  0</m>.
-      Our solution is either <m>y = e^C e^{\frac{x^3}{3}}</m> or <m>y = - e^C e^{{\frac{x^3}{3}}}</m>.
-      Further, note that <m>C</m> is constant,
-      so <m>e^C</m> is also constant.
-      If we write our solution as <m>y = Ae^{\frac{x^3}{3}}</m>,
-      and allow the constant <m>A</m> to take on either positive or negative values,
-      we incorporate both cases of the absolute value.
-      Finally, if we allow <m>A</m> to be zero,
-      we recover the missing solution discussed above.
-      The best way to express the general solution to our differential equation is
-      <me>
-        y = Ae^{\frac{x^3}{3}}
-      </me>.
-    </p>
+    <example xml:id="ex_separable_DE">
+      <title>Solving a Separable Differential Equation</title>
+      <statement>
+        <p>
+          Find the general solution to the differential equation <m>\yp = x^2y</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Using the informal solution method outlined above,
+          we treat <m>\displaystyle \frac{dy}{dx}</m> as a fraction,
+          and write the separated form of the differential equation as
+          <me>
+            \frac{dy}{y} = x^2 dx
+          </me>.
+        </p>
+        <p>
+          Integrating the left hand side of the equation with respect to <m>y</m> and the right hand side of the equation with respect to <m>x</m> yields
+          <me>
+            \ln |y| = \frac{1}{3}x^3 + C
+          </me>.
+        </p>
+        <p>
+          This is an implicit form of the solution to the differential equation.
+          Solving for <m>y</m> yields an explicit form for the solution.
+          Exponentiating both sides, we have
+          <me>
+            |y| = e^{x^3/3 + C} = e^{x^3/3}e^C
+          </me>.
+        </p>
+        <p>
+          This solution is a bit problematic.
+          First, the absolute value makes the solution difficult to understand.
+          The second issue comes from our desire to find the
+          <em>general solution.</em>
+          Recall that a general solution includes all possible solutions to the differential equation.
+          In other words, for any given initial condition,
+          the general solution must include the solution to that specific initial value problem.
+          We can often satisfy any given initial condition by choosing an appropriate <m>C</m> value.
+          When solving separable equations, though,
+          it is possible to lose solutions that have the form <m>y =</m> constant.
+          Notice that <m>y=0</m> solves the differential equation,
+          but it is not possible to choose a finite <m>C</m> to make our solution look like <m>y=0</m>.
+          Our solution cannot solve the initial value problem
+          <m>\displaystyle \frac{dy}{dx} = x^2y</m>, with <m>y(a) = 0</m>
+          (where <m>a</m> is any value).
+          Thus, we haven't actually found a general solution to the problem.
+          We can clean up the solution and recover the missing solution with a bit of clever thought.
+        </p>
+        <p>
+          Recall the formal definition of the absolute value:
+          <m>|y| = y</m> if <m>y \geq 0</m> and <m>|y| =  -y</m> if <m>y \lt  0</m>.
+          Our solution is either <m>y = e^C e^{\frac{x^3}{3}}</m> or <m>y = - e^C e^{{\frac{x^3}{3}}}</m>.
+          Further, note that <m>C</m> is constant,
+          so <m>e^C</m> is also constant.
+          If we write our solution as <m>y = Ae^{\frac{x^3}{3}}</m>,
+          and allow the constant <m>A</m> to take on either positive or negative values,
+          we incorporate both cases of the absolute value.
+          Finally, if we allow <m>A</m> to be zero,
+          we recover the missing solution discussed above.
+          The best way to express the general solution to our differential equation is
+          <me>
+            y = Ae^{\frac{x^3}{3}}
+          </me>.
+        </p>
+      </solution>
+    </example>
     <p>
       \checkoddpage\ifoddpage\setboolean{oddpg}{true}\else\setboolean{oddpg}{false}\fi \AddToShipoutPicture*{\put(427,\LenToUnit{.72\paperheight}){ \begin{minipage} <em>Note:</em>
       The indefinite integrals <m>\int \frac{dy}{y}</m> and
@@ -217,112 +226,141 @@
       the missing solution <m>y=-1</m>.
       We should always be careful to look for missing constant solutions when seeking the general solution to a separable differential equation. \end{minipage}}}
     </p>
-    <p>
-      \appendixexample{ex_separable_IVP}{Solving a Separable Initial Value Problem}{ Solve the initial value problem <m>\displaystyle (y\sqrt{y^2-5}) \yp - \sin x \cos x = 0</m>,
-      with <m>y(0) = -3</m>.} {We first put the differential equation in separated form
-      <me>
-        y\sqrt{y^2-5}\,dy = \sin x \cos x\, dx
-      </me>.
-    </p>
-    <p>
-      The indefinite integral <m>\displaystyle \int y\sqrt{y^2-5}\,dy</m> requires the substitution <m>u = y^2-5</m>.
-      Using this substitute yields the antiderivative <m>\displaystyle \frac{1}{3} (y^2-5)^{3/2}</m>.
-      The indefinite integral <m>\displaystyle \int \sin x \cos x\,dx</m> requires the substitution <m>u = \sin x</m>.
-      Using this substitution yields the antiderivative <m>\displaystyle \frac{1}{2} \sin^2 x</m>.
-      Thus, we have an implicit form of the solution to the differential equation given by
-      <me>
-        \frac{1}{3} (y^2-5)^{3/2} = \frac{1}{2} \sin^2 x + C
-      </me>.
-    </p>
-    <p>
-      The initial condition says that <m>y</m> should be <m>-3</m> when <m>x</m> is <m>0</m>, or
-      <me>
-        \frac{1}{3} ((-3)^2 - 5)^{3/2} = \frac{1}{2} \sin^2 0 + C
-      </me>.
-    </p>
-    <p>
-      Evaluating the line above, we find <m>C = 8/3</m>,
-      yielding the particular solution to the initial value problem
-      <me>
-        \frac{1}{3} (y^2-5)^{3/2} = \frac{1}{2} \sin^2 x + \frac{8}{3}
-      </me>.
-    </p>
-    <p>
-      \appendixexample{ex_separable_DE2}{Solving a Separable Differential Equation}{ Find the general solution to the differential equation
-      <m>\displaystyle \frac{dy}{dx} = \frac{(x^2 + 1)e^{y}}{y}</m>.} { We start by observing that there are no constant solutions to this differential equation because there are no constant <m>y</m> values that make the right hand side of the equation identically zero.
-      Thus, we need not worry about losing solutions during the separation of variables process.
-      The separated form of the equation is given by
-      <me>
-        ye^{-y}\,dy = (x^2+1)\,dx
-      </me>.
-    </p>
-    <p>
-      The antiderivative of the left hand side requires Integration by Parts.
-      Evaluating both indefinite integrals yields the implicit solution
-      <me>
-        -(y+1)e^{-y} = \frac{1}{3}x^3 + x + C
-      </me>.
-    </p>
-    <p>
-      Since we cannot solve for <m>y</m>,
-      we cannot find an explicit form of the solution. }
-    </p>
-    <p>
-      \appendixexample{ex_logistic}{Solving the Logistic Differential Equation}{ Solve the logistic differential equation
-      <m>\displaystyle \frac{dy}{dt} = ky\left( 1 - \frac{y}{M}\right)</m>} {We looked at a slope field for this equation in <xref ref="sec_Graphical_Numerical">Section</xref>
-      in the specific case of <m>k = M = 1</m>.
-      Here, we use separation of variables to find an analytic solution to the more general equation.
-      Notice that the independent variable <m>t</m> does not explicitly appear in the differential equation.
-      We mentioned that an equation of this type is called <em>autonomous</em>.
-      All autonomous first order differential equations are separable.
-    </p>
-    <p>
-      We start by making the observation that both <m>y=0</m> and <m>y = M</m> are constant solutions to the differential equation.
-      We must check that these solutions are not lost during the separation of variables process.
-      The separated form of the equation is
-      <me>
-        \frac{1}{y \left(1-\displaystyle\frac{y}{M}\right)}\,dy = k\,dt
-      </me>.
-    </p>
-    <p>
-      The antiderivative of the left hand side of the equation can be found by making use of partial fractions.
-      Using the techniques discussed in <xref ref="sec_partial_fraction">Section</xref>, we write
-      <me>
-        \frac{1}{y\left(1-\frac{y}{M}\right)} = \frac{1}{y} + \frac{1}{M-y}
-      </me>.
-    </p>
-    <p>
-      Then an implicit form of the solution is given by
-      <me>
-        \ln |y| - \ln |M-y| = kt + C
-      </me>.
-    </p>
-    <p>
-      Combining the logarithms,
-      <me>
-        \ln \left | \frac{y}{M-y} \right |= kt + C
-      </me>.
-    </p>
-    <p>
-      Similarly to <xref ref="ex_separable_DE">Example</xref>,
-      we can write
-      <me>
-        \frac{y}{M-y} = Ae^{kt}
-      </me>.
-    </p>
-    <p>
-      Letting <m>A</m> take on positive values or negative values incorporates both cases of the absolute value.
-      This is another implicit form of the solution.
-      Solving for <m>y</m> gives the explicit form
-      <me>
-        y = \frac{M}{1 + be^{-kt}}
-      </me>,
-      where <m>b</m> is an arbitrary constant.
-      Notice that <m>b=0</m> recovers the constant solution <m>y = M</m>.
-      The constant solution <m>y=0</m> cannot be produced with a finite <m>b</m> value,
-      and has been lost.
-      The general solution the logistic differential equation is the set containing <m>\displaystyle y = \frac{M}{1 + be^{-kt}}</m> and <m>y=0</m>.
-    </p>
+    <example xml:id="ex_separable_IVP">
+      <title>Solving a Separable Initial Value Problem</title>
+      <statement>
+        <p>
+          Solve the initial value problem
+          <m>\displaystyle (y\sqrt{y^2-5}) \yp - \sin x \cos x = 0</m>,
+          with <m>y(0) = -3</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We first put the differential equation in separated form
+          <me>
+            y\sqrt{y^2-5}\,dy = \sin x \cos x\, dx
+          </me>.
+        </p>
+        <p>
+          The indefinite integral <m>\displaystyle \int y\sqrt{y^2-5}\,dy</m> requires the substitution <m>u = y^2-5</m>.
+          Using this substitute yields the antiderivative <m>\displaystyle \frac{1}{3} (y^2-5)^{3/2}</m>.
+          The indefinite integral <m>\displaystyle \int \sin x \cos x\,dx</m> requires the substitution <m>u = \sin x</m>.
+          Using this substitution yields the antiderivative <m>\displaystyle \frac{1}{2} \sin^2 x</m>.
+          Thus, we have an implicit form of the solution to the differential equation given by
+          <me>
+            \frac{1}{3} (y^2-5)^{3/2} = \frac{1}{2} \sin^2 x + C
+          </me>.
+        </p>
+        <p>
+          The initial condition says that <m>y</m> should be <m>-3</m> when <m>x</m> is <m>0</m>, or
+          <me>
+            \frac{1}{3} ((-3)^2 - 5)^{3/2} = \frac{1}{2} \sin^2 0 + C
+          </me>.
+        </p>
+        <p>
+          Evaluating the line above, we find <m>C = 8/3</m>,
+          yielding the particular solution to the initial value problem
+          <me>
+            \frac{1}{3} (y^2-5)^{3/2} = \frac{1}{2} \sin^2 x + \frac{8}{3}
+          </me>.
+        </p>
+      </solution>
+    </example>
+    <example xml:id="ex_separable_DE2">
+      <title>Solving a Separable Differential Equation</title>
+      <statement>
+        <p>
+          Find the general solution to the differential equation <m>\displaystyle \frac{dy}{dx} = \frac{(x^2 + 1)e^{y}}{y}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We start by observing that there are no constant solutions to this differential equation because there are no constant <m>y</m> values that make the right hand side of the equation identically zero.
+          Thus, we need not worry about losing solutions during the separation of variables process.
+          The separated form of the equation is given by
+          <me>
+            ye^{-y}\,dy = (x^2+1)\,dx
+          </me>.
+        </p>
+        <p>
+          The antiderivative of the left hand side requires Integration by Parts.
+          Evaluating both indefinite integrals yields the implicit solution
+          <me>
+            -(y+1)e^{-y} = \frac{1}{3}x^3 + x + C
+          </me>.
+        </p>
+        <p>
+          Since we cannot solve for <m>y</m>,
+          we cannot find an explicit form of the solution.
+        </p>
+      </solution>
+    </example>
+    <example xml:id="ex_logistic">
+      <title>Solving the Logistic Differential Equation</title>
+      <statement>
+        <p>
+          Solve the logistic differential equation <m>\displaystyle \frac{dy}{dt} = ky\left( 1 - \frac{y}{M}\right)</m>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We looked at a slope field for this equation in <xref ref="sec_Graphical_Numerical">Section</xref>
+          in the specific case of <m>k = M = 1</m>.
+          Here, we use separation of variables to find an analytic solution to the more general equation.
+          Notice that the independent variable <m>t</m> does not explicitly appear in the differential equation.
+          We mentioned that an equation of this type is called <em>autonomous</em>.
+          All autonomous first order differential equations are separable.
+        </p>
+        <p>
+          We start by making the observation that both <m>y=0</m> and <m>y = M</m> are constant solutions to the differential equation.
+          We must check that these solutions are not lost during the separation of variables process.
+          The separated form of the equation is
+          <me>
+            \frac{1}{y \left(1-\displaystyle\frac{y}{M}\right)}\,dy = k\,dt
+          </me>.
+        </p>
+        <p>
+          The antiderivative of the left hand side of the equation can be found by making use of partial fractions.
+          Using the techniques discussed in <xref ref="sec_partial_fraction">Section</xref>, we write
+          <me>
+            \frac{1}{y\left(1-\frac{y}{M}\right)} = \frac{1}{y} + \frac{1}{M-y}
+          </me>.
+        </p>
+        <p>
+          Then an implicit form of the solution is given by
+          <me>
+            \ln |y| - \ln |M-y| = kt + C
+          </me>.
+        </p>
+        <p>
+          Combining the logarithms,
+          <me>
+            \ln \left | \frac{y}{M-y} \right |= kt + C
+          </me>.
+        </p>
+        <p>
+          Similarly to <xref ref="ex_separable_DE">Example</xref>,
+          we can write
+          <me>
+            \frac{y}{M-y} = Ae^{kt}
+          </me>.
+        </p>
+        <p>
+          Letting <m>A</m> take on positive values or negative values incorporates both cases of the absolute value.
+          This is another implicit form of the solution.
+          Solving for <m>y</m> gives the explicit form
+          <me>
+            y = \frac{M}{1 + be^{-kt}}
+          </me>,
+          where <m>b</m> is an arbitrary constant.
+          Notice that <m>b=0</m> recovers the constant solution <m>y = M</m>.
+          The constant solution <m>y=0</m> cannot be produced with a finite <m>b</m> value,
+          and has been lost.
+          The general solution the logistic differential equation is the set containing <m>\displaystyle y = \frac{M}{1 + be^{-kt}}</m> and <m>y=0</m>.
+        </p>
+      </solution>
+    </example>
     <p>
       \checkoddpage\ifoddpage\setboolean{oddpg}{true}\else\setboolean{oddpg}{false}\fi \AddToShipoutPicture*{\put(427,\LenToUnit{.35\paperheight}){ \begin{minipage} <em>Note:</em>
       Solving for <m>y</m> initially yields the explicit solution <m>\displaystyle y = \frac{AMe^{kt}}{1+Ae^{kt}}</m>.
