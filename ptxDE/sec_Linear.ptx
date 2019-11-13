@@ -30,57 +30,64 @@
         </p>
       </statement>
     </definition>
-    <p>
-      \appendixexample{ex_identify_linear}{Classifying Differential Equations}{ Classify each differential equation as first order linear,
-      separable, both, or neither.
-    </p>
-    <ol cols="2">
-      <li>
-        <title>(a)</title>
+    <example xml:id="ex_identify_linear">
+      <title>Classifying Differential Equations</title>
+      <statement>
         <p>
-          <m>\displaystyle \yp = xy</m>
+          Classify each differential equation as first order linear,
+          separable, both, or neither.
         </p>
-      </li>
-      <li>
-        <title>(b)</title>
+        <ol cols="2">
+          <li>
+            <title>(a)</title>
+            <p>
+              <m>\displaystyle \yp = xy</m>
+            </p>
+          </li>
+          <li>
+            <title>(b)</title>
+            <p>
+              <m>\displaystyle \yp = e^y + 3x</m>
+            </p>
+          </li>
+          <li>
+            <title>(c)</title>
+            <p>
+              <m>\displaystyle \yp - (\cos x)y = \cos x</m>
+            </p>
+          </li>
+          <li>
+            <title>(d)</title>
+            <p>
+              <m>\displaystyle y\yp -3xy = 4\ln x</m>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
         <p>
-          <m>\displaystyle \yp = e^y + 3x</m>
+          (a)<nbsp/>Both.
+          We identify <m>p(x) = -x</m> and <m>q(x) = 0</m>.
+          The separated form of the equation is <m>\displaystyle \frac{dy}{y} = x\,dx</m>.
         </p>
-      </li>
-      <li>
-        <title>(c)</title>
         <p>
-          <m>\displaystyle \yp - (\cos x)y = \cos x</m>
+          (b)<nbsp/>Neither.
+          The <m>e^y</m> term makes the equation nonlinear.
+          Because of the addition,
+          it is not possible to write the equation in separated form.
         </p>
-      </li>
-      <li>
-        <title>(d)</title>
         <p>
-          <m>\displaystyle y\yp -3xy = 4\ln x</m>
+          (c)<nbsp/>First order linear.
+          We identify <m>p(x) = -\cos x</m> and <m>q(x) = \cos x</m>.
+          The equation cannot be written in separated form.
         </p>
-      </li>
-    </ol>
-    <p>
-      } {(a)<nbsp/>Both.
-      We identify <m>p(x) = -x</m> and <m>q(x) = 0</m>.
-      The separated form of the equation is <m>\displaystyle \frac{dy}{y} = x\,dx</m>.
-    </p>
-    <p>
-      (b)<nbsp/>Neither.
-      The <m>e^y</m> term makes the equation nonlinear.
-      Because of the addition,
-      it is not possible to write the equation in separated form.
-    </p>
-    <p>
-      (c)<nbsp/>First order linear.
-      We identify <m>p(x) = -\cos x</m> and <m>q(x) = \cos x</m>.
-      The equation cannot be written in separated form.
-    </p>
-    <p>
-      (d)<nbsp/>Neither.
-      Notice that dividing by <m>y</m> results in the nonlinear term <m>\displaystyle \frac{4\ln x}{y}</m>.
-      It is not possible to write the equation in separated form. }
-    </p>
+        <p>
+          (d)<nbsp/>Neither.
+          Notice that dividing by <m>y</m> results in the nonlinear term <m>\displaystyle \frac{4\ln x}{y}</m>.
+          It is not possible to write the equation in separated form.
+        </p>
+      </solution>
+    </example>
     <p>
       Notice that linearity depends on the dependent variable <m>y</m>,
       not the independent variable <m>x</m>.
@@ -287,47 +294,56 @@
     <p>
       Let's practice the process by solving the two first order linear differential equations from <xref ref="ex_identify_linear">Example</xref>.
     </p>
-    <p>
-      \appendixexample{ex_linear1}{Solving a First Order Linear Equation}{ Find the general solution to
-      <m>\displaystyle \yp = xy</m>.} {We solve by following the steps in <xref ref="idea_solving_linear">Key Idea</xref>.
-      Unlike the process for solving separable equations,
-      we need not worry about losing constant solutions.
-      The answer we find <em>will</em>
-      be the general solution to the differential equation.
-      We first write the equation in the form
-      <me>
-        \frac{dy}{dx} - xy = 0
-      </me>.
-    </p>
-    <p>
-      By identifying <m>p(x) = -x</m>,
-      we can compute the integrating factor
-      <me>
-        \mu(x) = e^{\int -x\,dx} = e^{-\frac{1}{2}x^2}
-      </me>.
-    </p>
-    <p>
-      Multiplying both side of the differential equation by <m>\mu(x)</m>, we have
-      <me>
-        e^{-\frac{1}{2}x^2}\left( \frac{dy}{dx} - xy\right) = 0
-      </me>.
-    </p>
-    <p>
-      The left hand side of the differential equation condenses to yield
-      <me>
-        \frac{d}{dx} \left ( e^{-\frac{1}{2}x^2}y\right ) = 0
-      </me>.
-    </p>
-    <p>
-      We integrate both sides with respect to <m>x</m> to find the implicit solution
-      <me>
-        e^{-\frac{1}{2}x^2}y = C
-      </me>,
-      or the explicit solution
-      <me>
-        y  = Ce^{\frac{1}{2}x^2}
-      </me>.
-    </p>
+    <example xml:id="ex_linear1">
+      <title>Solving a First Order Linear Equation</title>
+      <statement>
+        <p>
+          Find the general solution to <m>\displaystyle \yp = xy</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We solve by following the steps in <xref ref="idea_solving_linear">Key Idea</xref>.
+          Unlike the process for solving separable equations,
+          we need not worry about losing constant solutions.
+          The answer we find <em>will</em>
+          be the general solution to the differential equation.
+          We first write the equation in the form
+          <me>
+            \frac{dy}{dx} - xy = 0
+          </me>.
+        </p>
+        <p>
+          By identifying <m>p(x) = -x</m>,
+          we can compute the integrating factor
+          <me>
+            \mu(x) = e^{\int -x\,dx} = e^{-\frac{1}{2}x^2}
+          </me>.
+        </p>
+        <p>
+          Multiplying both side of the differential equation by <m>\mu(x)</m>, we have
+          <me>
+            e^{-\frac{1}{2}x^2}\left( \frac{dy}{dx} - xy\right) = 0
+          </me>.
+        </p>
+        <p>
+          The left hand side of the differential equation condenses to yield
+          <me>
+            \frac{d}{dx} \left ( e^{-\frac{1}{2}x^2}y\right ) = 0
+          </me>.
+        </p>
+        <p>
+          We integrate both sides with respect to <m>x</m> to find the implicit solution
+          <me>
+            e^{-\frac{1}{2}x^2}y = C
+          </me>,
+          or the explicit solution
+          <me>
+            y  = Ce^{\frac{1}{2}x^2}
+          </me>.
+        </p>
+      </solution>
+    </example>
     <p>
       \checkoddpage\ifoddpage\setboolean{oddpg}{true}\else\setboolean{oddpg}{false}\fi \AddToShipoutPicture*{\put(427,\LenToUnit{.65\paperheight}){ \begin{minipage} <em>Note:</em>
       The step where the left hand side of the differential equation condenses to the derivative of a product can feel a bit magical.
@@ -337,115 +353,144 @@
       try using the Product Rule and Implicit Differentiation to evaluate <m>\displaystyle \frac{d}{dx}\left (e^{-\frac{1}{2}x^2}y\right)</m>,
       and verify that it becomes <m>e^{-\frac{1}{2}x^2}\left(\displaystyle \frac{dy}{dx} - xy\right)</m>. \end{minipage}}}
     </p>
-    <p>
-      \appendixexample{ex_linear2}{Solving a First Order Linear Equation}{ Find the general solution to
-      <m>\displaystyle \yp -(\cos x)y = \cos x</m>.} {The differential equation is already in the correct form.
-      The integrating factor is given by
-      <me>
-        \mu(x) = e^{-\int\cos x\,dx} = e^{-\sin x}
-      </me>.
-    </p>
-    <p>
-      Multiplying both sides of the equation by the integrating factor and condensing,
-      <me>
-        \frac{d}{dx}\left(e^{-\sin x}y \right) = (\cos x) e^{-\sin x}
-      </me>
-    </p>
-    <p>
-      Using the substitution <m>u = -\sin x</m>,
-      we can integrate to find the implicit solution
-      <me>
-        e^{-\sin x} y = -e^{-\sin x} + C
-      </me>.
-    </p>
-    <p>
-      The explicit form of the general solution is
-      <me>
-        y = -1 + Ce^{\sin x}
-      </me>.
-    </p>
+    <example xml:id="ex_linear2">
+      <title>Solving a First Order Linear Equation</title>
+      <statement>
+        <p>
+          Find the general solution to <m>\displaystyle \yp -(\cos x)y = \cos x</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The differential equation is already in the correct form.
+          The integrating factor is given by
+          <me>
+            \mu(x) = e^{-\int\cos x\,dx} = e^{-\sin x}
+          </me>.
+        </p>
+        <p>
+          Multiplying both sides of the equation by the integrating factor and condensing,
+          <me>
+            \frac{d}{dx}\left(e^{-\sin x}y \right) = (\cos x) e^{-\sin x}
+          </me>
+        </p>
+        <p>
+          Using the substitution <m>u = -\sin x</m>,
+          we can integrate to find the implicit solution
+          <me>
+            e^{-\sin x} y = -e^{-\sin x} + C
+          </me>.
+        </p>
+        <p>
+          The explicit form of the general solution is
+          <me>
+            y = -1 + Ce^{\sin x}
+          </me>.
+        </p>
+      </solution>
+    </example>
     <p>
       We continue our practice by finding the particular solution to an initial value problem.
     </p>
-    <p>
-      \appendixexample{ex_linear_ivp}{Solving a First Order Linear Initial Value Problem}{Solve the initial value problem <m>\displaystyle x\yp - y = x^3\ln x</m>,
-      with <m>y(1)=0</m>.} {We first divide by <m>x</m> to get
-      <me>
-        \frac{dy}{dx}-\frac{1}{x}y = x^2\ln x
-      </me>.
-    </p>
-    <p>
-      The integrating factor is given by
-      <md>
-        <mrow>\mu(x) \amp = e^{\int-\frac{1}{x}\,dx}</mrow>
-        <mrow>\amp = e^{-\ln x}</mrow>
-        <mrow>\amp = e^{\ln x^{-1}}</mrow>
-        <mrow>\amp = x^{-1}</mrow>
-      </md>.
-    </p>
-    <p>
-      Multiplying both sides of the differential equation by the integrating factor and condensing the left hand side, we have
-      <me>
-        \frac{d}{dx} \left( \frac{y}{x}\right) = x\ln x
-      </me>.
-    </p>
-    <p>
-      Using Integrating by Parts to find the antiderivative of <m>x\ln x</m>,
-      we find the implicit solution
-      <me>
-        \frac{y}{x} = \frac{1}{2}x^2\ln x - \frac{1}{4}x^2 + C
-      </me>.
-    </p>
-    <p>
-      Solving for <m>y</m>, the explicit solution is
-      <me>
-        y = \frac{1}{2}x^3\ln x - \frac{1}{4}x^3 + Cx
-      </me>.
-    </p>
-    <p>
-      The initial condition <m>y(1) = 0</m> yields <m>C = 1/4</m>.
-      The solution to the initial value problem is
-      <me>
-        y = \frac{1}{2}x^3\ln x - \frac{1}{4}x^3 + \frac{1}{4}x
-      </me>.
-    </p>
+    <example xml:id="ex_linear_ivp">
+      <title>Solving a First Order Linear Initial Value Problem</title>
+      <statement>
+        <p>
+          Solve the initial value problem <m>\displaystyle x\yp - y = x^3\ln x</m>,
+          with <m>y(1)=0</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We first divide by <m>x</m> to get
+          <me>
+            \frac{dy}{dx}-\frac{1}{x}y = x^2\ln x
+          </me>.
+        </p>
+        <p>
+          The integrating factor is given by
+          <md>
+            <mrow>\mu(x) \amp = e^{\int-\frac{1}{x}\,dx}</mrow>
+            <mrow>\amp = e^{-\ln x}</mrow>
+            <mrow>\amp = e^{\ln x^{-1}}</mrow>
+            <mrow>\amp = x^{-1}</mrow>
+          </md>.
+        </p>
+        <p>
+          Multiplying both sides of the differential equation by the integrating factor and condensing the left hand side, we have
+          <me>
+            \frac{d}{dx} \left( \frac{y}{x}\right) = x\ln x
+          </me>.
+        </p>
+        <p>
+          Using Integrating by Parts to find the antiderivative of <m>x\ln x</m>,
+          we find the implicit solution
+          <me>
+            \frac{y}{x} = \frac{1}{2}x^2\ln x - \frac{1}{4}x^2 + C
+          </me>.
+        </p>
+        <p>
+          Solving for <m>y</m>, the explicit solution is
+          <me>
+            y = \frac{1}{2}x^3\ln x - \frac{1}{4}x^3 + Cx
+          </me>.
+        </p>
+        <p>
+          The initial condition <m>y(1) = 0</m> yields <m>C = 1/4</m>.
+          The solution to the initial value problem is
+          <me>
+            y = \frac{1}{2}x^3\ln x - \frac{1}{4}x^3 + \frac{1}{4}x
+          </me>.
+        </p>
+      </solution>
+    </example>
     <p>
       Differential equations are a valuable tool for exploring various physical problems.
       This process of using equations to describe real world situations is called mathematical modeling,
       and is the topic of the next section.
       The last two examples in this section begin our discussion of mathematical modeling.
     </p>
-    <p>
-      \appendixexample{ex_falling_object}{A Falling Object Without Air Resistance}{ Suppose an object with mass <m>m</m> is dropped from an airplane.
-      Find and solve a differential equation describing the vertical velocity of the object assuming no air resistance.} {The basic physical law at play is Newton's second law,
-      <me>
-        \text{ mass }  \times \text{ acceleration }  = \text{ the sum of the forces }
-      </me>.
-    </p>
-    <p>
-      Using the fact that acceleration is the derivative of velocity,
-      mass <times/> acceleration can be writting <m>mv'</m>.
-      In the absence of air resistance,
-      the only force of interest is the force due to gravity.
-      This force is approximately constant,
-      and is given by <m>mg</m>, where <m>g</m> is the gravitational constant.
-      The word equation above can be written as the differential equation
-      <me>
-        m\frac{dv}{dt} = mg
-      </me>.
-    </p>
-    <p>
-      Because <m>g</m> is constant,
-      this differential equation is simply an integration problem,
-      and we find
-      <me>
-        v = gt + C
-      </me>.
-    </p>
-    <p>
-      Since <m>v = C</m> with <m>t=0</m>,
-      we see that the arbitrary constant here corresponds to the initial vertical velocity of the object. }
-    </p>
+    <example xml:id="ex_falling_object">
+      <title>A Falling Object Without Air Resistance</title>
+      <statement>
+        <p>
+          Suppose an object with mass <m>m</m> is dropped from an airplane.
+          Find and solve a differential equation describing the vertical velocity of the object assuming no air resistance.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The basic physical law at play is Newton's second law,
+          <me>
+            \text{ mass }  \times \text{ acceleration }  = \text{ the sum of the forces }
+          </me>.
+        </p>
+        <p>
+          Using the fact that acceleration is the derivative of velocity,
+          mass <times/> acceleration can be writting <m>mv'</m>.
+          In the absence of air resistance,
+          the only force of interest is the force due to gravity.
+          This force is approximately constant,
+          and is given by <m>mg</m>, where <m>g</m> is the gravitational constant.
+          The word equation above can be written as the differential equation
+          <me>
+            m\frac{dv}{dt} = mg
+          </me>.
+        </p>
+        <p>
+          Because <m>g</m> is constant,
+          this differential equation is simply an integration problem,
+          and we find
+          <me>
+            v = gt + C
+          </me>.
+        </p>
+        <p>
+          Since <m>v = C</m> with <m>t=0</m>,
+          we see that the arbitrary constant here corresponds to the initial vertical velocity of the object.
+        </p>
+      </solution>
+    </example>
     <p>
       The process of mathematical modeling does not stop simply because we have found an answer.
       We must examine the answer to see how well it can describe real world observations.
@@ -457,71 +502,79 @@
       In order to more fully describe real world behavior,
       our mathematical model must be revised.
     </p>
-    <p>
-      \appendixexample{ex_falling_object1}{A Falling Object with Air Resistance}{ Suppose an object with mass <m>m</m> is dropped from an airplane.
-      Find and solve a differential equation describing the vertical velocity of the object,
-      taking air resistance into account.} {We still begin with Newon's second law,
-      but now we assume that the forces in the object come both from gravity and from air resistance.
-      The gravitational force is still given by <m>mg</m>.
-      For air resistance,
-      we assume the force is related to the velocity of the object.
-      A simple way to describe this assumption might be <m>kv^{p}</m>,
-      where <m>k</m> is a proportionality constant and <m>p</m> is a positive real number.
-      The value <m>k</m> depends on various factors such as the density of the object,
-      surface area of the object, and density of the air.
-      The value <m>p</m> affects how changes in the velocity affect the force.
-      Taken together,
-      a function of the form <m>kv^{p}</m> is often called a <em>power law</em>.
-      The differential equation for the velocity is given by
-      <me>
-        m\frac{dv}{dt} = mg - kv^{p}
-      </me>.
-    </p>
-    <p>
-      (Notice that the force from air resistance opposes motion,
-      and points in the opposite direction as the force from gravity.) This differential equation is separable,
-      and can be written in the separated form
-      <me>
-        \frac{m}{mg - kv^{p}}\,dv = dt
-      </me>.
-    </p>
-    <p>
-      For arbitrary positive <m>p</m>,
-      the integration is difficult,
-      making this problem hard to solve analytically.
-      In the case that <m>p=1</m>, the differential equation becomes linear,
-      and is easy to solve either using either separation of variables or integrating factor techniques.
-      We assume <m>p=1</m>,
-      and proceed with an integrating factor so we can continue practicing the process.
-      Writing
-      <me>
-        \frac{dv}{dt} + \frac{k}{m}v = g
-      </me>,
-      we identify the integrating factor
-      <me>
-        \mu(t) = e^{\int \frac{k}{m}\,dt} = e^{\frac{k}{m}t}
-      </me>.
-    </p>
-    <p>
-      Then
-      <me>
-        \frac{d}{dt}\left(e^{\frac{k}{m}t}v \right) = ge^{\frac{k}{m}t}
-      </me>,
-      so
-      <me>
-        e^{\frac{k}{m}t}v = \frac{mg}{k}e^{\frac{k}{m}t} + C
-      </me>,
-      or
-      <me>
-        v = \frac{mg}{k}+ Ce^{-\frac{k}{m}t}
-      </me>.
-    </p>
-    <p>
-      \appendixmfigure{.3}{The velocity functions from <xref ref="ex_falling_object">Examples</xref>
-      (dashed) and <xref ref="ex_falling_object1"></xref>
-      (solid) under the assumption that <m>v(0)=0</m>, with <m>g=9.8, m=1</m>,
-      and <m>k=1</m>.}{fig:20_03_falling_object}{figures/fig20_03_falling_object}
-    </p>
+    <example xml:id="ex_falling_object1">
+      <title>A Falling Object with Air Resistance</title>
+      <statement>
+        <p>
+          Suppose an object with mass <m>m</m> is dropped from an airplane.
+          Find and solve a differential equation describing the vertical velocity of the object,
+          taking air resistance into account.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We still begin with Newon's second law,
+          but now we assume that the forces in the object come both from gravity and from air resistance.
+          The gravitational force is still given by <m>mg</m>.
+          For air resistance,
+          we assume the force is related to the velocity of the object.
+          A simple way to describe this assumption might be <m>kv^{p}</m>,
+          where <m>k</m> is a proportionality constant and <m>p</m> is a positive real number.
+          The value <m>k</m> depends on various factors such as the density of the object,
+          surface area of the object, and density of the air.
+          The value <m>p</m> affects how changes in the velocity affect the force.
+          Taken together,
+          a function of the form <m>kv^{p}</m> is often called a <em>power law</em>.
+          The differential equation for the velocity is given by
+          <me>
+            m\frac{dv}{dt} = mg - kv^{p}
+          </me>.
+        </p>
+        <p>
+          (Notice that the force from air resistance opposes motion,
+          and points in the opposite direction as the force from gravity.) This differential equation is separable,
+          and can be written in the separated form
+          <me>
+            \frac{m}{mg - kv^{p}}\,dv = dt
+          </me>.
+        </p>
+        <p>
+          For arbitrary positive <m>p</m>,
+          the integration is difficult,
+          making this problem hard to solve analytically.
+          In the case that <m>p=1</m>, the differential equation becomes linear,
+          and is easy to solve either using either separation of variables or integrating factor techniques.
+          We assume <m>p=1</m>,
+          and proceed with an integrating factor so we can continue practicing the process.
+          Writing
+          <me>
+            \frac{dv}{dt} + \frac{k}{m}v = g
+          </me>,
+          we identify the integrating factor
+          <me>
+            \mu(t) = e^{\int \frac{k}{m}\,dt} = e^{\frac{k}{m}t}
+          </me>.
+        </p>
+        <p>
+          Then
+          <me>
+            \frac{d}{dt}\left(e^{\frac{k}{m}t}v \right) = ge^{\frac{k}{m}t}
+          </me>,
+          so
+          <me>
+            e^{\frac{k}{m}t}v = \frac{mg}{k}e^{\frac{k}{m}t} + C
+          </me>,
+          or
+          <me>
+            v = \frac{mg}{k}+ Ce^{-\frac{k}{m}t}
+          </me>.
+        </p>
+      </solution>
+    </example>
+    <figure xml:id="fig_20_03_falling_object">
+      <caption>The velocity functions from <xref ref="ex_falling_object">Examples</xref> (dashed) and <xref ref="ex_falling_object1"></xref> (solid) under the assumption that <m>v(0)=0</m>, with <m>g=9.8, m=1</m>, and <m>k=1</m>.</caption>
+      <img src="figures/fig20_03_falling_object"/>
+    </figure>
     <p>
       In the solution above, the exponential term decays as time increases,
       causing the velocity to approach the constant value <m>mg/k</m> in the limit as <m>t</m> approaches infinity.
