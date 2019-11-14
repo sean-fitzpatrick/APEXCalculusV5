@@ -18,18 +18,24 @@
       (but not higher order)
       derivatives of the dependent variable.
     </p>
+  </introduction>
+  <subsection>
+    <title>Solving First Order Linear Equations</title>
+
     <definition xml:id="def_Linear">
       <title>First Order Linear Differential Equation</title>
       <statement>
         <p>
-          A <term>first order linear differential equation</term><idx><h>differential equation</h><h>first order linear</h></idx> is a differential equation that can be written in the form
+          A <term>first order linear differential equation</term> is a differential equation that can be written in the form
           <me>
             \frac{dy}{dx} + p(x)y = q(x)
           </me>,
           where <m>p</m> and <m>q</m> are arbitrary functions of the independent variable <m>x</m>.
+          <idx><h>differential equation</h><h>first order linear</h></idx>
         </p>
       </statement>
     </definition>
+
     <example xml:id="ex_identify_linear">
       <title>Classifying Differential Equations</title>
       <statement>
@@ -37,57 +43,51 @@
           Classify each differential equation as first order linear,
           separable, both, or neither.
         </p>
-        <ol cols="2">
-          <li>
-            <title>(a)</title>
-            <p>
-              <m>\displaystyle \yp = xy</m>
-            </p>
-          </li>
-          <li>
-            <title>(b)</title>
-            <p>
-              <m>\displaystyle \yp = e^y + 3x</m>
-            </p>
-          </li>
-          <li>
-            <title>(c)</title>
-            <p>
-              <m>\displaystyle \yp - (\cos x)y = \cos x</m>
-            </p>
-          </li>
-          <li>
-            <title>(d)</title>
-            <p>
-              <m>\displaystyle y\yp -3xy = 4\ln x</m>
-            </p>
-          </li>
-        </ol>
+        <p>
+          <ol label="a" cols="2">
+            <li><m>\displaystyle \yp = xy</m></li>
+            <li><m>\displaystyle \yp = e^y + 3x</m></li>
+            <li><m>\displaystyle \yp - (\cos x)y = \cos x</m></li>
+            <li><m>\displaystyle y\yp -3xy = 4\ln x</m></li>
+          </ol>
+        </p>
       </statement>
       <solution>
         <p>
-          (a)<nbsp/>Both.
-          We identify <m>p(x) = -x</m> and <m>q(x) = 0</m>.
-          The separated form of the equation is <m>\displaystyle \frac{dy}{y} = x\,dx</m>.
-        </p>
-        <p>
-          (b)<nbsp/>Neither.
-          The <m>e^y</m> term makes the equation nonlinear.
-          Because of the addition,
-          it is not possible to write the equation in separated form.
-        </p>
-        <p>
-          (c)<nbsp/>First order linear.
-          We identify <m>p(x) = -\cos x</m> and <m>q(x) = \cos x</m>.
-          The equation cannot be written in separated form.
-        </p>
-        <p>
-          (d)<nbsp/>Neither.
-          Notice that dividing by <m>y</m> results in the nonlinear term <m>\displaystyle \frac{4\ln x}{y}</m>.
-          It is not possible to write the equation in separated form.
+          <ol label="a">
+            <li>
+              <p>Both.
+                We identify <m>p(x) = -x</m> and <m>q(x) = 0</m>.
+                The separated form of the equation is <m>\displaystyle \frac{dy}{y} = x\,dx</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Neither.
+                The <m>e^y</m> term makes the equation nonlinear.
+                Because of the addition,
+                it is not possible to write the equation in separated form.
+              </p>
+            </li>
+            <li>
+              <p>
+                First order linear.
+                We identify <m>p(x) = -\cos x</m> and <m>q(x) = \cos x</m>.
+                The equation cannot be written in separated form.
+              </p>
+            </li>
+            <li>
+              <p>
+                Neither.
+                Notice that dividing by <m>y</m> results in the nonlinear term <m>\displaystyle \frac{4\ln x}{y}</m>.
+                It is not possible to write the equation in separated form.
+              </p>
+            </li>
+          </ol>
         </p>
       </solution>
     </example>
+
     <p>
       Notice that linearity depends on the dependent variable <m>y</m>,
       not the independent variable <m>x</m>.
@@ -96,15 +96,13 @@
       Neither <m>\cos x</m> nor <m>\sin x</m> are linear functions of <m>x</m>,
       but the differential equation is still linear.
     </p>
-  </introduction>
-  <subsection>
-    <title>Solving First Order Linear Equations</title>
+
     <p>
       Before working out a general technique for solving first order linear differential equations,
       we look at a specific example.
       Consider the differential equation
       <me>
-        \frac{d}{dx}\big(xy\big) = \sin x \cos x
+        \frac{d}{dx}\bigl(xy\bigr) = \sin x \cos x
       </me>.
     </p>
     <p>
@@ -140,27 +138,29 @@
       which matches the form in <xref ref="def_Linear">Definition</xref>.
       Reversing our steps would lead us back to the original form our our differential equation.
     </p>
-    <p>
-      \checkoddpage\ifoddpage\setboolean{oddpg}{true}\else\setboolean{oddpg}{false}\fi \AddToShipoutPicture*{\put(427,\LenToUnit{.55\paperheight}){ \begin{minipage} <em>Note:</em>
-      In the examples in the previous section,
-      we performed operations on the arbitrary constant <m>C</m>,
-      but still called the result <m>C</m>.
-      The justification is that the result after the operation is
-      <em>still</em> an arbitrary contant.
-      Here, we divide <m>C</m> by <m>x</m>,
-      so the result depends explicitly on the independent variable <m>x</m>.
-      Since <m>C/x</m> is <em>not</em> contant,
-      we can't just call it <m>C</m>. \end{minipage}}}
-    </p>
+    <aside>
+      <p>
+        In the examples in the previous section,
+        we performed operations on the arbitrary constant <m>C</m>,
+        but still called the result <m>C</m>.
+        The justification is that the result after the operation is
+        <em>still</em> an arbitrary contant.
+        Here, we divide <m>C</m> by <m>x</m>,
+        so the result depends explicitly on the independent variable <m>x</m>.
+        Since <m>C/x</m> is <em>not</em> contant,
+        we can't just call it <m>C</m>.
+      </p>
+    </aside>
+
     <p>
       As motivated by the problem we just explored,
       the basic idea behind solving first order linear differential equations is to multiply both sides of the differential equation by a function,
       called an <em>integrating factor</em>,
-          <idx><h>differential equation</h><h>integrating factor</h></idx>
       that makes the left hand side of the equation look like an expanded Product Rule.
       We then condense the left hand side into the derivative of a product and integrate both sides.
       An obvious question is,
       <q>How do you find this integrating factor?</q>
+      <idx><h>differential equation</h><h>integrating factor</h></idx>
     </p>
     <p>
       Consider the first order linear equation
@@ -185,16 +185,21 @@
     <p>
       Using the Product Rule and Implicit Differentiation,
       <me>
-        \frac{d}{dx} \big ( \mu(x) y \big ) = \frac{d\mu}{dx}y + \mu(x)\frac{dy}{dx}
+        \frac{d}{dx} \bigl( \mu(x) y \bigr) = \frac{d\mu}{dx}y + \mu(x)\frac{dy}{dx}
       </me>.
     </p>
+    <aside>
+      <p>
+        Though we use <m>\mu(x)</m> for our integrating factor,
+        the symbol is unimportant.
+        The notation <m>\mu(x)</m> is a common choice,
+        but other texts my use <m>\alpha(x), I(x)</m>,
+        or some other symbol to designate the integrating factor.
+      </p>
+    </aside>
+
     <p>
-      \checkoddpage\ifoddpage\setboolean{oddpg}{true}\else\setboolean{oddpg}{false}\fi \AddToShipoutPicture*{\put(427,\LenToUnit{.8\paperheight}){ \begin{minipage}  <em>Note:</em>
-      Though we use <m>\mu(x)</m> for our integrating factor,
-      the symbol is unimportant.
-      The notation <m>\mu(x)</m> is a common choice,
-      but other texts my use <m>\alpha(x), I(x)</m>,
-      or some other symbol to designate the integrating factor. \end{minipage}}}  Equating
+      Equating
       <m>\frac{d}{dx} \big ( \mu(x) y \big )</m> and <m>\mu(x) \left ( \frac{dy}{dx} + p(x)y \right )</m> gives
       <me>
         \frac{d\mu}{dx}y + \mu(x)\frac{dy}{dx} = \mu(x) \frac{dy}{dx} + \mu(x)p(x)y
@@ -204,14 +209,20 @@
         \frac{d\mu}{dx} = \mu(x)p(x)
       </me>.
     </p>
+
+    <aside>
+      <p>
+        Following the steps outlined in the previous section,
+        we should technically end up with <m>\mu(x) = Ce^{\int p(x)\,dx}</m>,
+        where <m>C</m> is an arbitrary constant.
+        Because we multiply both sides of the differential equation by <m>\mu(x)</m>,
+        the arbitrary constant cancels,
+        and we omit it when finding the integrating factor.
+      </p>
+    </aside>
+
     <p>
-      \checkoddpage\ifoddpage\setboolean{oddpg}{true}\else\setboolean{oddpg}{false}\fi \AddToShipoutPicture*{\put(427,\LenToUnit{.35\paperheight}){ \begin{minipage}  <em>Note:</em>
-      Following the steps outlined in the previous section,
-      we should technically end up with <m>\mu(x) = Ce^{\int p(x)\,dx}</m>,
-      where <m>C</m> is an arbitrary constant.
-      Because we multiply both sides of the differential equation by <m>\mu(x)</m>,
-      the arbitrary constant cancels,
-      and we omit it when finding the integrating factor. \end{minipage}}}  In order for the integrating factor <m>\mu(x)</m> to perform its job,
+      In order for the integrating factor <m>\mu(x)</m> to perform its job,
       it must solve the differential equation above.
       But that differential equation is separable, so we can solve it.
       The separated form is
@@ -234,13 +245,13 @@
       after multiplying by <m>\mu(x)</m>,
       we can always write the differential equation in the form
       <me>
-        \frac{d}{dx} \big( \mu(x)y \big) = \mu(x)q(x)
+        \frac{d}{dx} \bigl( \mu(x)y \bigr) = \mu(x)q(x)
       </me>.
     </p>
     <p>
       Integrating and solving for <m>y</m>, the explicit solution is
       <me>
-        y = \frac{1}{\mu(x)}\int \big( \mu(x)q(x) \big)\,dx
+        y = \frac{1}{\mu(x)}\int \bigl( \mu(x)q(x) \bigr)\,dx
       </me>.
     </p>
     <p>
@@ -250,55 +261,60 @@
       Rather, we always always follow the steps outlined in <xref ref="idea_solving_linear">Key Idea</xref>
       when solving equations of this type.
     </p>
+
     <insight xml:id="idea_solving_linear">
       <title>Solving First Order Linear Equations</title>
-      <ol>
-        <li>
-          <p>
-            Write the differential equation in the form
-            <me>
-              \frac{dy}{dx} + p(x)y = q(x)
-            </me>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Compute the integrating factor
-            <me>
-              \mu(x) = e^{\int p(x)\,dx}
-            </me>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Multiply both sides of the differential equation by <m>\mu(x)</m>,
-            and condense the left hand side to get
-            <me>
-              \frac{d}{dx}\big( \mu(x)y \big) = \mu(x)q(x)
-            </me>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Integrate both sides of the differential equation with respect to <m>x</m>,
-            taking care to remember the arbitrary constant.
-          </p>
-        </li>
-        <li>
-          <p>
-            Solve for <m>y</m> to find the explicit solution to the differential equation.
-          </p>
-        </li>
-      </ol>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Write the differential equation in the form
+              <me>
+                \frac{dy}{dx} + p(x)y = q(x)
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Compute the integrating factor
+              <me>
+                \mu(x) = e^{\int p(x)\,dx}
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Multiply both sides of the differential equation by <m>\mu(x)</m>,
+              and condense the left hand side to get
+              <me>
+                \frac{d}{dx}\big( \mu(x)y \big) = \mu(x)q(x)
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Integrate both sides of the differential equation with respect to <m>x</m>,
+              taking care to remember the arbitrary constant.
+            </p>
+          </li>
+          <li>
+            <p>
+              Solve for <m>y</m> to find the explicit solution to the differential equation.
+            </p>
+          </li>
+        </ol>
+      </p>
     </insight>
+
     <p>
       Let's practice the process by solving the two first order linear differential equations from <xref ref="ex_identify_linear">Example</xref>.
     </p>
+
     <example xml:id="ex_linear1">
       <title>Solving a First Order Linear Equation</title>
       <statement>
         <p>
-          Find the general solution to <m>\displaystyle \yp = xy</m>.
+          Find the general solution to <m>\yp = xy</m>.
         </p>
       </statement>
       <solution>
@@ -344,20 +360,23 @@
         </p>
       </solution>
     </example>
-    <p>
-      \checkoddpage\ifoddpage\setboolean{oddpg}{true}\else\setboolean{oddpg}{false}\fi \AddToShipoutPicture*{\put(427,\LenToUnit{.65\paperheight}){ \begin{minipage} <em>Note:</em>
-      The step where the left hand side of the differential equation condenses to the derivative of a product can feel a bit magical.
-      The reality is that we choose <m>\mu(x)</m> so that we can get exactly this condensing behavior.
-      It's not magic, it's math!
-      If you're still skeptical,
-      try using the Product Rule and Implicit Differentiation to evaluate <m>\displaystyle \frac{d}{dx}\left (e^{-\frac{1}{2}x^2}y\right)</m>,
-      and verify that it becomes <m>e^{-\frac{1}{2}x^2}\left(\displaystyle \frac{dy}{dx} - xy\right)</m>. \end{minipage}}}
-    </p>
+
+    <aside>
+      <p>
+        The step where the left hand side of the differential equation condenses to the derivative of a product can feel a bit magical.
+        The reality is that we choose <m>\mu(x)</m> so that we can get exactly this condensing behavior.
+        It's not magic, it's math!
+        If you're still skeptical,
+        try using the Product Rule and Implicit Differentiation to evaluate <m>\displaystyle \frac{d}{dx}\left (e^{-\frac{1}{2}x^2}y\right)</m>,
+        and verify that it becomes <m>e^{-\frac{1}{2}x^2}\left(\displaystyle \frac{dy}{dx} - xy\right)</m>.
+      </p>
+    </aside>
+
     <example xml:id="ex_linear2">
       <title>Solving a First Order Linear Equation</title>
       <statement>
         <p>
-          Find the general solution to <m>\displaystyle \yp -(\cos x)y = \cos x</m>.
+          Find the general solution to <m>\yp -(\cos x)y = \cos x</m>.
         </p>
       </statement>
       <solution>
@@ -389,9 +408,11 @@
         </p>
       </solution>
     </example>
+
     <p>
       We continue our practice by finding the particular solution to an initial value problem.
     </p>
+
     <example xml:id="ex_linear_ivp">
       <title>Solving a First Order Linear Initial Value Problem</title>
       <statement>
@@ -444,12 +465,14 @@
         </p>
       </solution>
     </example>
+
     <p>
       Differential equations are a valuable tool for exploring various physical problems.
       This process of using equations to describe real world situations is called mathematical modeling,
       and is the topic of the next section.
       The last two examples in this section begin our discussion of mathematical modeling.
     </p>
+
     <example xml:id="ex_falling_object">
       <title>A Falling Object Without Air Resistance</title>
       <statement>
@@ -465,6 +488,7 @@
             \text{ mass }  \times \text{ acceleration }  = \text{ the sum of the forces }
           </me>.
         </p>
+
         <p>
           Using the fact that acceleration is the derivative of velocity,
           mass <times/> acceleration can be writting <m>mv'</m>.
@@ -477,6 +501,7 @@
             m\frac{dv}{dt} = mg
           </me>.
         </p>
+
         <p>
           Because <m>g</m> is constant,
           this differential equation is simply an integration problem,
@@ -485,12 +510,14 @@
             v = gt + C
           </me>.
         </p>
+
         <p>
           Since <m>v = C</m> with <m>t=0</m>,
           we see that the arbitrary constant here corresponds to the initial vertical velocity of the object.
         </p>
       </solution>
     </example>
+
     <p>
       The process of mathematical modeling does not stop simply because we have found an answer.
       We must examine the answer to see how well it can describe real world observations.
@@ -502,6 +529,7 @@
       In order to more fully describe real world behavior,
       our mathematical model must be revised.
     </p>
+
     <example xml:id="ex_falling_object1">
       <title>A Falling Object with Air Resistance</title>
       <statement>
@@ -530,6 +558,7 @@
             m\frac{dv}{dt} = mg - kv^{p}
           </me>.
         </p>
+
         <p>
           (Notice that the force from air resistance opposes motion,
           and points in the opposite direction as the force from gravity.) This differential equation is separable,
@@ -538,6 +567,7 @@
             \frac{m}{mg - kv^{p}}\,dv = dt
           </me>.
         </p>
+
         <p>
           For arbitrary positive <m>p</m>,
           the integration is difficult,
@@ -555,6 +585,7 @@
             \mu(t) = e^{\int \frac{k}{m}\,dt} = e^{\frac{k}{m}t}
           </me>.
         </p>
+
         <p>
           Then
           <me>
@@ -571,10 +602,12 @@
         </p>
       </solution>
     </example>
+
     <figure xml:id="fig_20_03_falling_object">
       <caption>The velocity functions from <xref ref="ex_falling_object">Examples</xref> (dashed) and <xref ref="ex_falling_object1"></xref> (solid) under the assumption that <m>v(0)=0</m>, with <m>g=9.8, m=1</m>, and <m>k=1</m>.</caption>
       <img src="figures/fig20_03_falling_object"/>
     </figure>
+
     <p>
       In the solution above, the exponential term decays as time increases,
       causing the velocity to approach the constant value <m>mg/k</m> in the limit as <m>t</m> approaches infinity.
@@ -597,301 +630,317 @@
       and we should consider a more complicated model.
     </p>
   </subsection>
-  <subsection>
-    <title>Problems</title>
-    <p>
-      In the following exercises, Find the general solution to the first order linear differential equation.
-    </p>
-    <exercise>
-      <statement>
+
+  <exercises>
+    <exercisegroup>
+      <introduction>
         <p>
-          <m>\displaystyle \yp = 2y - 3</m>
+          In the following exercises, Find the general solution to the first order linear differential equation.
         </p>
-      </statement>
-      <answer>
+      </introduction>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = 2y - 3</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = \displaystyle \frac{3}{2} + Ce^{2x}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle x^2\yp + xy = 1</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = \displaystyle \frac{\ln |x| + C}{x}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle x^2\yp - xy = 1</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = \displaystyle -\frac{1}{2x} + Cx</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle x\yp +4y = x^3-x</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = \displaystyle \frac{x^3}{7} - \frac{x}{5} + \frac{C}{x^4}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle (\cos^2 x \sin x)\yp + (\cos^3 x)y = 1</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = \sec x + C(\csc x)</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \frac{\yp}{x} = 1-2y</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = \displaystyle \frac{1}{2} + Ce^{-x^2}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle x^3\yp-3x^3y=x^4e^{2x}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = \displaystyle Ce^{3x}-(x+1)e^{2x}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp + y = 5\sin(2x)</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = sin(2x) - 2\cos(2x) + Ce^{-x}</m>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
         <p>
-          <m>y = \displaystyle \frac{3}{2} + Ce^{2x}</m>
+          In the following exercises, Find the particular solution to the initial value problem.
         </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
+      </introduction>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = y + 2xe^x</m>, <m>y(0) = 2</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = (x^2+2)e^x</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle x\yp + 2y = x^2 - x + 1</m>, <m>y(1) = 1</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = \displaystyle \frac{1}{4}x^2-\frac{1}{3}x+\frac{1}{2}+\frac{7}{12x^2}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle x\yp + (x+2)y = x</m>, <m>y(1) = 0</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = \displaystyle 1 - \frac{2}{x} + \frac{2-e^{1-x}}{x^2}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp + 2y = 0</m>, <m>y(0) = 3</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = \displaystyle 3e^{-2x}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle (x+1)\yp + (x+2)y = 2xe^{-x}</m>, <m>y(0) = 1</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = \displaystyle \frac{x^2+1}{x+1}e^{-x}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle (\cos x)\yp + (\sin x)y = 1</m>, <m>y(0) = -3</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = \sin x - 3\cos x</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle (x^2-1)\yp + 2y = (x+1)^2</m>, <m>y(0) = 2</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = \displaystyle \frac{(x-2)(x+1)}{x-1}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle x\yp-2y = \frac{x^3}{1+x^2}</m>, <m>y(1) = 0</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = \displaystyle x^2\left (\arctan x - \frac{\pi}{4}\right )</m>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
         <p>
-          <m>\displaystyle x^2\yp + xy = 1</m>
+          In the following exercises,
+          classify the differential equation as separable,
+          first order linear, or both,
+          and solve the initial value problem using an appropriate method.
         </p>
-      </statement>
-      <answer>
+      </introduction>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = y + yx^2</m>, <m>y(0) = -5</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Both; <m>\displaystyle y = -5e^{x + \frac{1}{3}x^3}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle xe^y \yp = x^2\sin x</m>, <m>y(0) = 0</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            separable; <m>\displaystyle e^y = \sin x - x\cos x + 1</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle (x-1)\yp+y = x^2-1</m>, <m>y(0) = 2</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            linear; <m>\displaystyle y = \frac{x^3-3x-6}{3(x-1)}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = y^2+y-2</m>, <m>y(0) = 1</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            separable; <m>\displaystyle y = 1</m>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
         <p>
-          <m>y = \displaystyle \frac{\ln |x| + C}{x}</m>
+          In the following exercises, draw a slope field for the differential equation.
+          Use the slope field to predict the behavior of the solution to the initial value problem for large <m>x</m> values.
+          Solve the initial value problem,
+          and verify your prediction.
         </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle x^2\yp - xy = 1</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = \displaystyle -\frac{1}{2x} + Cx</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle x\yp +4y = x^3-x</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = \displaystyle \frac{x^3}{7} - \frac{x}{5} + \frac{C}{x^4}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle (\cos^2 x \sin x)\yp + (\cos^3 x)y = 1</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = \sec x + C(\csc x)</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \frac{\yp}{x} = 1-2y</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = \displaystyle \frac{1}{2} + Ce^{-x^2}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle x^3\yp-3x^3y=x^4e^{2x}</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = \displaystyle Ce^{3x}-(x+1)e^{2x}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp + y = 5\sin(2x)</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = sin(2x) - 2\cos(2x) + Ce^{-x}</m>
-        </p>
-      </answer>
-    </exercise>
-    <p>
-      In the following exercises, Find the particular solution to the initial value problem.
-    </p>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp = y + 2xe^x</m>, <m>y(0) = 2</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = (x^2+2)e^x</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle x\yp + 2y = x^2 - x + 1</m>, <m>y(1) = 1</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = \displaystyle \frac{1}{4}x^2-\frac{1}{3}x+\frac{1}{2}+\frac{7}{12x^2}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle x\yp + (x+2)y = x</m>, <m>y(1) = 0</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = \displaystyle 1 - \frac{2}{x} + \frac{2-e^{1-x}}{x^2}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp + 2y = 0</m>, <m>y(0) = 3</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = \displaystyle 3e^{-2x}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle (x+1)\yp + (x+2)y = 2xe^{-x}</m>, <m>y(0) = 1</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = \displaystyle \frac{x^2+1}{x+1}e^{-x}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle (\cos x)\yp + (\sin x)y = 1</m>, <m>y(0) = -3</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = \sin x - 3\cos x</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle (x^2-1)\yp + 2y = (x+1)^2</m>, <m>y(0) = 2</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = \displaystyle \frac{(x-2)(x+1)}{x-1}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle x\yp-2y = \frac{x^3}{1+x^2}</m>, <m>y(1) = 0</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = \displaystyle x^2\left (\arctan x - \frac{\pi}{4}\right )</m>
-        </p>
-      </answer>
-    </exercise>
-    <p>
-      In the following exercises,
-      classify the differential equation as separable,
-      first order linear, or both,
-      and solve the initial value problem using an appropriate method.
-    </p>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp = y + yx^2</m>, <m>y(0) = -5</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          Both; <m>\displaystyle y = -5e^{x + \frac{1}{3}x^3}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle xe^y \yp = x^2\sin x</m>, <m>y(0) = 0</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          separable; <m>\displaystyle e^y = \sin x - x\cos x + 1</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle (x-1)\yp+y = x^2-1</m>, <m>y(0) = 2</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          linear; <m>\displaystyle y = \frac{x^3-3x-6}{3(x-1)}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp = y^2+y-2</m>, <m>y(0) = 1</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          separable; <m>\displaystyle y = 1</m>
-        </p>
-      </answer>
-    </exercise>
-    <p>
-      In the following exercises, draw a slope field for the differential equation.
-      Use the slope field to predict the behavior of the solution to the initial value problem for large <m>x</m> values.
-      Solve the initial value problem,
-      and verify your prediction.
-    </p>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp = x-y</m>, <m>y(0) = 0</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <img src="figures/fig20_03_ex_21ans"/>
-        </p>
-        <p>
-          The solution will increase and begin to follow the line <m>y=x-1</m>.
-        </p>
-        <p>
-          <m>y = x-1 + e^{-x}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle (X+1)\yp + y = \frac{1}{x+1}</m>, <m>y(0) = 2</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <img src="figures/fig20_03_ex_22ans"/>
-        </p>
-        <p>
-          The solution will decrease and approach <m>y=0</m>.
-        </p>
-        <p>
-          <m>\displaystyle y = \frac{2 + \ln(x+1)}{x+1}</m>
-        </p>
-      </answer>
-    </exercise>
-  </subsection>
+      </introduction>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = x-y</m>, <m>y(0) = 0</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <img src="figures/fig20_03_ex_21ans"/>
+          </p>
+          <p>
+            The solution will increase and begin to follow the line <m>y=x-1</m>.
+          </p>
+          <p>
+            <m>y = x-1 + e^{-x}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle (X+1)\yp + y = \frac{1}{x+1}</m>, <m>y(0) = 2</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <img src="figures/fig20_03_ex_22ans"/>
+          </p>
+          <p>
+            The solution will decrease and approach <m>y=0</m>.
+          </p>
+          <p>
+            <m>\displaystyle y = \frac{2 + \ln(x+1)}{x+1}</m>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+  </exercises>
 </section>

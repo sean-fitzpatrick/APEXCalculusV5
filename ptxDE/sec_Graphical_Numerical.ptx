@@ -20,7 +20,7 @@
       <statement>
         <p>
           Given a function <m>y=f(x)</m>,
-          a <term>differential equation</term><idx><h>differential equation</h><h>definition</h></idx> is an equation relating
+          a <term>differential equation</term> is an equation relating
           <m>x,
           y</m>, and derivatives of <m>y</m>.
           <ul>
@@ -42,6 +42,9 @@
               </p>
             </li>
           </ul>
+          <idx><h>differential equation</h><h>definition</h></idx>
+          <idx><h>order</h><h>of a differential equation</h></idx>
+          <idx><h>differential equation</h><h>order of</h></idx>
         </p>
       </statement>
     </definition>
@@ -77,6 +80,8 @@
       </me>,
       with <m>C</m> an arbitrary constant of integration,
       the <em>general solution</em> to the differential equation.
+      <idx><h>general solution</h><h>of a differential equation</h></idx>
+      <idx><h>differential equation</h><h>general solution</h></idx>
     </p>
     <p>
       In order to specify the value of the integration constant <m>C</m>,
@@ -93,7 +98,8 @@
           A differential equation paired with an initial condition
           (or initial conditions)
           is called an <term>initial value problem.</term>
-              <idx><h>initial value problem</h></idx>
+              <idx><h>initial value problem</h><h>for differential equations</idx>
+              <idx><h>initial condition</h></idx>
         </p>
         <p>
           The solution to an initial value problem is called a
@@ -103,21 +109,26 @@
         </p>
         <p>
           The family of solutions to a differential equation that encompasses all possible solutions is called the
-          <term>general solution</term><idx><h>differential equation</h><h>general solution</h></idx> to the differential equation.
+          <term>general solution</term> to the differential equation.
+          <idx><h>differential equation</h><h>general solution</h></idx>
         </p>
       </statement>
     </definition>
-    <p>
-      \checkoddpage\ifoddpage\setboolean{oddpg}{true}\else\setboolean{oddpg}{false}\fi \AddToShipoutPicture*{\put(427,\LenToUnit{.45\paperheight}){ \begin{minipage} <em>Note:</em>
-      A general solution typically includes one or more arbitrary constants.
-      Different values of the constant(s) specify different members in the family of solutions.
-      The particular solution to an initial value problem is the specific member in the family of solutions that corresponds to the given initial condition(s). \end{minipage}}}
-    </p>
+
+    <aside>
+      <p>
+        <em>Note:</em>
+        A general solution typically includes one or more arbitrary constants.
+        Different values of the constant(s) specify different members in the family of solutions.
+        The particular solution to an initial value problem is the specific member in the family of solutions that corresponds to the given initial condition(s).
+      </p>
+    </aside>
+
     <example xml:id="ex_simple_de">
       <title>A simple first-order differential equation</title>
       <statement>
         <p>
-          Solve the differential equation <m>\displaystyle \yp = 2y</m>.
+          Solve the differential equation <m>\yp = 2y</m>.
         </p>
       </statement>
       <solution>
@@ -173,10 +184,14 @@
         </p>
       </solution>
     </example>
+
     <figure xml:id="fig_general_particular">
-      <caption>A representation of some of the members of general solution to the differential equation <m>\yp = 2y</m>, including the particular solution to the initial value problem with <m>y(0)=\displaystyle 3/2</m>, from <xref ref="ex_simple_de">Example</xref></caption>
+      <caption>A representation of some of the members of general solution to the differential equation <m>\yp = 2y</m>,
+      including the particular solution to the initial value problem with <m>y(0)=\displaystyle 3/2</m>,
+      from <xref ref="ex_simple_de">Example</xref></caption>
       <img src="figures/fig20_01_general_particular"/>
     </figure>
+
     <example xml:id="ex_simple_de2">
       <title>A second-order differential equation</title>
       <statement>
@@ -200,23 +215,30 @@
         </p>
       </solution>
     </example>
+
     <p>
       The differential equation in <xref ref="ex_simple_de2">Example</xref>
-      is second order because the equation involves a second derivative.
+      is <em>second order</em>, because the equation involves a second derivative.
       In general, the number of initial conditions required to specify a particular solution depends on the order of the differential equation.
       For the remainder of the chapter,
       we restrict our attention to first order differential equations and first order initial value problems.
     </p>
+
     <example xml:id="ex_verify_solutions">
       <title>Verifying a solution to the differential equation</title>
       <statement>
         <p>
           Which of the following is a solution to the differential equation
           <me>
-            \yp + \frac{y}{x} - \sqrt{y} = 0\text{?}
-          </me>
-          a) <m>y = C \left ( 1 + \ln x \right )^2</m>  b)
-          <m>y = \left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )^2</m>  c) <m>y = C e^{-3x} + \sqrt{\sin x}</m>
+            \yp + \frac{y}{x} - \sqrt{y} = 0
+          </me>?
+        </p>
+        <p>
+          <ol label="a">
+            <li><m>y = C \left ( 1 + \ln x \right )^2</m></li>
+            <li><m>y = \left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )^2</m></li>
+            <li><m>y = C e^{-3x} + \sqrt{\sin x}</m></li>
+          </ol>
         </p>
       </statement>
       <solution>
@@ -225,56 +247,69 @@
           We substitute each potential solution into the differential equation to see if it satisfies the equation.
         </p>
         <p>
-          a) Testing the potential solution <m>y = C \left ( 1 + \ln x \right )^2</m>:
-        </p>
-        <p>
-          Differentiating,
-          we have <m>\displaystyle \yp = \frac{2C(1 + \ln x)}{x}</m>.
-          Substituting into the differential equation,
-          <md>
-            <mrow>\amp \ \frac{2C(1+\ln x)}{x} + \frac{C(1+\ln x)^2}{x} -\sqrt{C}(1+\ln x)</mrow>
-            <mrow>=\amp \ (1+\ln x)\left( \frac{2C}{x} + \frac{C(1+\ln x)}{x} - \sqrt{C}\right)</mrow>
-            <mrow>\neq \amp \ 0</mrow>
-          </md>.
-        </p>
-        <p>
-          Since it doesn't satisfy the differential equation,
-          <m>y = C(1 + \ln x)^2</m> is <em>not</em> a solution.
-        </p>
-        <p>
-          b) Testing the potential solution <m>\displaystyle y = \left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )^2</m>:
-        </p>
-        <p>
-          Differentiating,
-          we have <m>\displaystyle \yp = 2\left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )\left ( \frac{1}{3} - \frac{C}{2x^{3/2}}\right )</m>.
-          Substituting into the differential equation,
-          <md>
-            <mrow>\amp \ 2\left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )\left ( \frac{1}{3} - \frac{C}{2x^{3/2}}\right ) + \frac{1}{x}\left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )^2 - \left (\frac{1}{3}x + \frac{C}{\sqrt{x}}\right)</mrow>
-            <mrow>=\amp \ \left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right ) \left ( \frac{2}{3} - \frac{C}{x^{3/2}} + \frac{1}{3} + \frac{C}{x^{3/2}} - 1 \right )</mrow>
-            <mrow>=\amp \ 0. \text{ (Note how the second parenthetical grouping above reduces to 0.) }</mrow>
-          </md>
-        </p>
-        <p>
-          Thus <m>\displaystyle y = \left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )^2</m> <em>is</em>
-          a solution to the differential equation.
-        </p>
-        <p>
-          c) Testing the potential solution <m>\displaystyle y = C e^{-3x} + \sqrt{\sin x}</m>:
-        </p>
-        <p>
-          Differentiating,
-          <m>\displaystyle \yp = -3Ce^{-3x} + \frac{\cos x}{2\sqrt{\sin x}}</m>.
-          Substituting into the differential equation,
-          <md>
-            <mrow>\amp \ -3Ce^{-3x} + \frac{\cos x}{2\sqrt{\sin x}} + \frac{C e^{-3x} + \sqrt{\sin x}}{x} - \sqrt{C e^{-3x} + \sqrt{\sin x}} \neq 0</mrow>
-          </md>.
-        </p>
-        <p>
-          The function <m>\displaystyle y = C e^{-3x} + \sqrt{\sin x}</m> is <em>not</em>
-          a solution to the differential equation.
+          <ol label="a">
+            <li>
+              <p>
+                Testing the potential solution <m>y = C \left ( 1 + \ln x \right )^2</m>:
+              </p>
+              <p>
+                Differentiating,
+                we have <m>\displaystyle \yp = \frac{2C(1 + \ln x)}{x}</m>.
+                Substituting into the differential equation,
+                <md>
+                  <mrow>\amp \ \frac{2C(1+\ln x)}{x} + \frac{C(1+\ln x)^2}{x} -\sqrt{C}(1+\ln x)</mrow>
+                  <mrow>=\amp \ (1+\ln x)\left( \frac{2C}{x} + \frac{C(1+\ln x)}{x} - \sqrt{C}\right)</mrow>
+                  <mrow>\neq \amp \ 0</mrow>
+                </md>.
+              </p>
+              <p>
+                Since it doesn't satisfy the differential equation,
+                <m>y = C(1 + \ln x)^2</m> is <em>not</em> a solution.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Testing the potential solution <m>\displaystyle y = \left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )^2</m>:
+              </p>
+              <p>
+                Differentiating,
+                we have <m>\displaystyle \yp = 2\left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )\left ( \frac{1}{3} - \frac{C}{2x^{3/2}}\right )</m>.
+                Substituting into the differential equation,
+                <md>
+                  <mrow>\amp \ 2\left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )\left ( \frac{1}{3} - \frac{C}{2x^{3/2}}\right ) + \frac{1}{x}\left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )^2 - \left (\frac{1}{3}x + \frac{C}{\sqrt{x}}\right)</mrow>
+                  <mrow>=\amp \ \left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right ) \left ( \frac{2}{3} - \frac{C}{x^{3/2}} + \frac{1}{3} + \frac{C}{x^{3/2}} - 1 \right )</mrow>
+                  <mrow>=\amp \ 0. \text{ (Note how the second parenthetical grouping above reduces to 0.) }</mrow>
+                </md>
+              </p>
+              <p>
+                Thus <m>\displaystyle y = \left ( \frac{1}{3}x + \frac{C}{\sqrt{x}} \right )^2</m> <em>is</em>
+                a solution to the differential equation.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Testing the potential solution <m>\displaystyle y = C e^{-3x} + \sqrt{\sin x}</m>:
+              </p>
+              <p>
+                Differentiating,
+                <m>\displaystyle \yp = -3Ce^{-3x} + \frac{\cos x}{2\sqrt{\sin x}}</m>.
+                Substituting into the differential equation,
+                <md>
+                  <mrow>\amp \ -3Ce^{-3x} + \frac{\cos x}{2\sqrt{\sin x}} + \frac{C e^{-3x} + \sqrt{\sin x}}{x} - \sqrt{C e^{-3x} + \sqrt{\sin x}} \neq 0</mrow>
+                </md>.
+              </p>
+              <p>
+                The function <m>\displaystyle y = C e^{-3x} + \sqrt{\sin x}</m> is <em>not</em>
+                a solution to the differential equation.
+              </p>
+            </li>
+          </ol>
         </p>
       </solution>
     </example>
+
     <example xml:id="ex_verify_solutions2">
       <title>Verifying a solution to a differential equation</title>
       <statement>
@@ -285,7 +320,8 @@
       <solution>
         <p>
           The solution in this example is called an
-          <em>implicit solution.</em><idx><h>differential equation</h><h>implicit soution</h></idx> That means the dependent variable <m>y</m> is a function of <m>x</m>,
+          <em>implicit solution.</em>
+          That means the dependent variable <m>y</m> is a function of <m>x</m>,
           but has not been explicitly solved for.
           Verifying the solution still involves differentiation,
           but we must take the derivatives implicitly.
@@ -293,6 +329,7 @@
           <me>
             2x + 2y\yp = C\yp
           </me>.
+          <idx><h>differential equation</h><h>implicit soution</h></idx>
         </p>
         <p>
           Solving for <m>\yp</m>, we have
@@ -316,6 +353,7 @@
       </solution>
     </example>
   </subsection>
+
   <subsection>
     <title>Graphical Solutions to Differential Equations</title>
     <p>
@@ -333,6 +371,7 @@
       we can find an approximate solution graphically by plotting <m>\cos x</m> and <m>x</m> and observing the <m>x</m>-value of the intersection.
       We can similarly use graphical tools to understand the qualitative behavior of solutions to a first order-differential equation.
     </p>
+
     <figure xml:id="fig_20_01_intersection">
       <caption>Graphically finding an approximate solution to <m>\cos x = x</m>.</caption>
       <img src="figures/fig20_01_intersection"/>
@@ -353,26 +392,30 @@
       the slope of the solution curve will be <m>f(x_0,y_0)</m>.
       Since this calculation of the slope is possible at any point <m>(x,y)</m> where the function <m>f(x,y)</m> is defined,
       we can produce a plot called a <em>slope field</em>
-      (or direction field<idx><h>direction field|see{slope field}</h></idx>)
+      (or direction field)
       that shows the slope of a solution at any point in the <m>xy</m>-plane where the solution is defined.
       Further, this process can be done purely by working with the differential equation itself.
       In other words,
       we can draw a slope field and use it to determine the qualitative behavior of solutions to a differential equation without having to solve the differential equation.
+      <idx><h>differential equation</h><h>graphical solution</h></idx>
+      <idx><h>direction field</h><see>slope field</see></idx>
     </p>
+
     <definition xml:id="def_slope_field">
       <title>Slope Field</title>
       <statement>
         <p>
           A <term>slope field</term>
-              <idx><h>slope field</h></idx>
           for a first-order differential equation
           <m>\yp = f(x,y)</m> is a plot in the <m>xy</m>-plane made up of short line segments or arrows.
           At each point <m>(x_0,y_0)</m> where <m>f(x,y)</m> is defined,
           the slope of the line segment is given by <m>f(x_0,y_0)</m>.
           Plots of solutions to a differential equation are tangent to the line segments in the slope field.
+            <idx><h>slope field</h></idx>
         </p>
       </statement>
     </definition>
+
     <example xml:id="ex_slope_field">
       <title>Sketching a slope field</title>
       <statement>
@@ -387,6 +430,9 @@
           It is not practical to draw an entire slope field by hand,
           but many tools exist for drawing slope fields on a computer.
           Here, we explicitly calculate a few of the line segments in the slope field.
+        </p>
+
+        <p>
           <ul>
             <li>
               <p>
@@ -410,6 +456,7 @@
             </li>
           </ul>
         </p>
+
         <p>
           Though it is possible to continue this process to sketch a slope field,
           we usually use a computer to make the drawing.
@@ -419,12 +466,14 @@
         </p>
       </solution>
     </example>
+
     <figure xml:id="fig_20_01_slopefield1">
       <caption>Slope field for <m>\yp = x+y</m> from <xref ref="ex_slope_field">Example</xref>.</caption>
       <img src="figures/fig20_01_slopefield1"/>
     </figure>
+
     <example xml:id="ex_IVP_graphical">
-      <title>Sketch a graphical solution to an initial value problem</title>
+      <title>A graphical solution to an initial value problem</title>
       <statement>
         <p>
           Approximate, with a sketch,
@@ -460,14 +509,17 @@
         </p>
       </solution>
     </example>
+
     <figure xml:id="fig_20_01_slopefield1solution">
       <caption>Solution to the initial value problem <m>\yp = x+y</m>, with <m>y(1)=-1</m> from <xref ref="ex_IVP_graphical">Example</xref></caption>
       <img src="figures/fig20_01_slopefield1solution"/>
     </figure>
+
     <figure xml:id="fig_20_01_slopefield2">
       <caption>Slope field for the logistic differential equation <m>\yp = y(1-y)</m> from <xref ref="ex_logistic_slope_field">Example</xref>.</caption>
       <img src="figures/fig20_01_slopefield2"/>
     </figure>
+
     <example xml:id="ex_logistic_slope_field">
       <title>Using a slope field to predict long term behavior</title>
       <statement>
@@ -480,11 +532,13 @@
       <solution>
         <p>
           This differential equation,
-          called the <em>logistic differential equation</em>,<idx><h>differential equation</h><h>logistic</h></idx> often appears in population biology to describe the size of a population.
+          called the <em>logistic differential equation</em>, often appears in population biology to describe the size of a population.
           For that reason,
           we use <m>t</m> (time) as the independent variable instead of <m>x</m>.
           We also often restrict attention to non-negative <m>y</m>-values because negative values correspond to a negative population.
+          <idx><h>differential equation</h><h>logistic</h></idx>
         </p>
+
         <p>
           Looking at the slope field in <xref ref="fig_20_01_slopefield2">Figure</xref>,
           we can predict long term behavior for a given initial condition.
@@ -510,20 +564,24 @@
             </li>
           </ul>
         </p>
+
         <p>
           The slope field for the logistic differential equation,
           along with representative solution curves,
           is shown in <xref ref="fig_20_01_slopefield2solution">Figure</xref>.
           Notice that any solution curve with positive initial value will tend towards the value <m>y=1</m>.
           We call this the <em>carrying capacity.</em>
+          <idx><h>carrying capacity</h></idx>
         </p>
       </solution>
     </example>
+
     <figure xml:id="fig_20_01_slopefield2solution">
       <caption>Slope field for the logistic differential equation <m>\yp = y(1-y)</m> from <xref ref="ex_logistic_slope_field">Example</xref> with a few representative solution curves.</caption>
       <img src="figures/fig20_01_slopefield2solution"/>
     </figure>
   </subsection>
+
   <subsection>
     <title>Numerical Solutions to Differential Equations: Euler's Method</title>
     <p>
@@ -536,7 +594,7 @@
       we can understand the qualitative behavior of the solution to the initial value problem,
       but will struggle to predict a specific value,
       <m>y(2)</m> for example, with any degree of confidence.
-      The most straight forward way to predict <m>y(2)</m> is to find the analytic solution to the the initial value problem and evaluate it at <m>x=2</m>.
+      The most straightforward way to predict <m>y(2)</m> is to find the analytic solution to the the initial value problem and evaluate it at <m>x=2</m>.
       Unfortunately,
       we have already mentioned that it is impossible to find analytic solutions to many differential equations.
       In the absence of an analytic solution,
@@ -546,13 +604,22 @@
       There are many techniques for computing numerical solutions to initial value problems.
       A course in numerical analysis will discuss various techniques along with their strengths and weaknesses.
       The simplest technique is called
-      <em>Euler's Method</em>.  \checkoddpage\ifoddpage\setboolean{oddpg}{true}\else\setboolean{oddpg}{false}\fi \AddToShipoutPicture*{\put(427,\LenToUnit{.4\paperheight}){ \begin{minipage}  <em>Note:</em>
-      Euler's Method is named for Leonhard Euler,
-      a prolific Swiss mathematician during the 1700's.
-      His last name is properly pronounced
-      <q>oil-er</q>, not
-      <q>you-ler.</q>
-      \end{minipage}}} Consider the first-order initial value problem
+      <em>Euler's Method</em>.
+      <idx><h>differential equation</h><h>numerical solution</h></idx>
+    </p>
+
+    <aside>
+      <p>
+        Euler's Method is named for Leonhard Euler,
+        a prolific Swiss mathematician during the 1700's.
+        His last name is properly pronounced
+        <q>oil-er</q>, not
+        <q>you-ler.</q>
+      </p>
+    </aside>
+
+    <p>
+      Consider the first-order initial value problem
       <me>
         \yp = f(x,y), \text{ with }  y(x_0) = y_0
       </me>.
@@ -600,7 +667,6 @@
       <title>Euler's Method</title>
       <p>
         Consider the initial value problem
-            <idx><h>Euler's Method</h></idx>
         <me>
           \yp = f(x,y) \text{ with }  y(x_0)=y_0
         </me>.
@@ -631,8 +697,10 @@
         This process yields a sequence of <m>N+1</m> points
         <m>(x_i,y_i)</m> for <m>i= 0,1,2,\ldots,N</m>,
         where <m>(x_i, y_i)</m> is an approximation for <m>(x_i,y(x_i))</m>.
+            <idx><h>Euler's Method</h></idx>
       </p>
     </insight>
+
     <p>
       Let's practice Euler's Method using a few concrete examples.
     </p>
@@ -649,9 +717,15 @@
           Our initial condition yields the starting values <m>x_0 = 1</m> and <m>y_0 = -1</m>.
           With <m>h = 0.5</m>, it takes <m>N=2</m> steps to get to <m>x=2</m>.
           Using steps 1 and 2 from the Euler's Method algorithm,
-          <me>
-            \begin{array}{rl | rl} x_0  \amp = 1      \amp    y_0  \amp = -1\\ \hline x_1   \amp = x_0 + h   \amp    y_1   \amp = y_0 + hf(x_0,y_0)\\ \amp = 1 + 0.5     \amp     \amp = -1 + 0.5(1 - 1)\\ \amp = 1.5    \amp     \amp = -1\\ \hline x_2  \amp = x_0 + 2h  \amp   y_2  \amp = y_1 + hf(x_1,y_1)\\ \amp = 1 + 2(0.5)  \amp     \amp = -1 + 0.5(1.5 -1)\\ \amp = 2      \amp     \amp = -0.75 \end{array}
-          </me>
+          <md>
+            <mrow> x_0  \amp = 1      \amp    y_0  \amp = -1</mrow>
+            <mrow> x_1   \amp = x_0 + h   \amp    y_1   \amp = y_0 + hf(x_0,y_0)</mrow>
+            <mrow>\amp = 1 + 0.5     \amp     \amp = -1 + 0.5(1 - 1)</mrow>
+            <mrow>\amp = 1.5    \amp     \amp = -1</mrow>
+            <mrow> x_2  \amp = x_0 + 2h  \amp   y_2  \amp = y_1 + hf(x_1,y_1)</mrow>
+            <mrow>\amp = 1 + 2(0.5)  \amp     \amp = -1 + 0.5(1.5 -1)</mrow>
+            <mrow> \amp = 2      \amp     \amp = -0.75 </mrow>
+          </md>.
         </p>
         <p>
           Using Euler's method, we find the approximate <m>y(2) \approx -0.75</m>.
@@ -663,15 +737,18 @@
         </p>
       </solution>
     </example>
+
     <figure xml:id="fig_20_01_euler1">
       <caption>Euler's Method approximation to <m>\yp = x + y</m> with <m>y(1) = -1</m> from <xref ref="ex_euler1">Example</xref>, along with the analytical solution to the initial value problem.</caption>
       <img src="figures/fig20_01_euler1"/>
     </figure>
+
     <p>
       This approximation doesn't appear terrific,
       though it is better than merely guessing.
       Let's repeat the previous example using a smaller <m>h</m>-value.
     </p>
+
     <example xml:id="ex_euler2">
       <title>Using Euler's Method 2</title>
       <statement>
@@ -687,13 +764,23 @@
           we need <m>N=4</m> steps on the interval <m>[1,2]</m> Using steps 1 and 2 from the Euler's Method algorithm
           (and rounding to 4 decimal points),
           we have
-          <me>
-            \begin{array}{rl | rl} x_0  \amp = 1      \amp    y_0  \amp = -1\\ \hline x_1   \amp = 1.25    \amp   y_1   \amp = -1 + 0.25(1 - 1)\\ \amp       \amp     \amp = -1\\ \hline x_2   \amp = 1.5     \amp    y_2   \amp = -1 + 0.25(1.25-1)\\ \amp       \amp     \amp = -0.9375\\ \hline x_3  \amp = 1.75    \amp   y_3   \amp = -0.9375 + 0.25(1.5-0.9375)\\ \amp       \amp     \amp = -0.7969\\ \hline x_4  \amp = 2      \amp   y_4  \amp = -0.7969 + 0.25(1.75 - 0.7969)\\ \amp       \amp     \amp = -0.5586\\ \hline \end{array}
-          </me>
+          <md>
+            <mrow> x_0  \amp = 1      \amp    y_0  \amp = -1 </mrow>
+            <mrow> x_1   \amp = 1.25    \amp   y_1   \amp = -1 + 0.25(1 - 1) </mrow>
+            <mrow> \amp       \amp     \amp = -1 </mrow>
+            <mrow> x_2   \amp = 1.5     \amp    y_2   \amp = -1 + 0.25(1.25-1) </mrow>
+            <mrow> \amp       \amp     \amp = -0.9375 </mrow>
+            <mrow> x_3  \amp = 1.75    \amp   y_3   \amp = -0.9375 + 0.25(1.5-0.9375) </mrow>
+            <mrow> \amp       \amp     \amp = -0.7969 </mrow>
+            <mrow> x_4  \amp = 2      \amp   y_4  \amp = -0.7969 + 0.25(1.75 - 0.7969) </mrow>
+            <mrow> \amp       \amp     \amp = -0.5586 </mrow>
+          </md>.
         </p>
+
         <p>
           Using Euler's method, we find <m>y(2) \approx -0.5586</m>.
         </p>
+
         <p>
           These five points,
           along with the points from <xref ref="ex_euler1">Example</xref> and the analytic solution,
@@ -701,10 +788,12 @@
         </p>
       </solution>
     </example>
+
     <figure xml:id="fig_20_01_euler2">
       <caption>Euler's Method approximations to <m>\yp = x + y</m> with <m>y(1) = -1</m> from <xref ref="ex_euler1">Examples</xref> and <xref ref="ex_euler2"></xref>, along with the analytical solution.</caption>
       <img src="figures/fig20_01_euler2"/>
     </figure>
+
     <p>
       Using the results from <xref ref="ex_euler1">Examples</xref>
       and <xref ref="ex_euler2"></xref>,
@@ -721,6 +810,8 @@
       Doing this repeatedly causes the errors to build on each other.
       This second type of error is often called the <em>propagated</em>
       or <em>accumulated error.</em>
+      <idx><h>accumulated error</h><h>using Euler's method</h></idx>
+      <idx><h>Euler's method</h><h>accumulated error</h></idx>
     </p>
     <p>
       A second observation is that the Euler approximation is more accurate for smaller <m>h</m>-values.
@@ -735,6 +826,7 @@
     <p>
       Let's do one final example of Euler's Method.
     </p>
+
     <example xml:id="ex_euler3">
       <title>Using Euler's Method 3</title>
       <statement>
@@ -762,12 +854,29 @@
         <p>
           Using <m>N=10</m> steps requires <m>\displaystyle h = \frac{4-0}{10} = 0.4</m>.
           Implementing Euler's Method, we have
-          <me>
-            \begin{array}{rl | rl} x_0  \amp = 0      \amp    y_0  \amp = 0.25\\ \hline x_1   \amp = 0.4    \amp   y_1   \amp = 0.25 + 0.4(0.25)(1-0.25)\\ \amp       \amp     \amp = 0.325\\ \hline x_2   \amp = 0.8     \amp    y_2   \amp = 0.325 + 0.4(0.325)(1-0.325)\\ \amp       \amp     \amp = 0.41275\\ \hline x_3  \amp = 1.2    \amp   y_3   \amp = 0.41275 + 0.4(0.41275)(1-0.41275)\\ \amp       \amp     \amp = 0.50970\\ \hline \end{array}
-          </me>
-          <me>
-            \begin{array}{rl | rl} x_4  \amp = 1.6    \amp   y_4  \amp = 0.50970 + 0.4(0.50970)(1 - 0.50970)\\ \amp       \amp     \amp = 0.60966\\ \hline x_5  \amp = 2.0    \amp    y_5  \amp = 0.60966 + 0.4(0.60966)(1-0.60966)\\ \amp       \amp     \amp =  0.70485\\ \hline x_6   \amp = 2.4    \amp   y_6   \amp = 0.70485 + 0.4(0.70485)(1 - 0.70485)\\ \amp       \amp     \amp = 0.78806\\ \hline x_7   \amp = 2.8     \amp    y_7   \amp = 0.78806 + 0.4(0.78806)(1-0.78806)\\ \amp       \amp     \amp = 0.85487\\ \hline x_8  \amp = 3.2    \amp   y_8   \amp = 0.85487 + 0.4(0.85487)(1-0.85487)\\ \amp       \amp     \amp = 0.90450\\ \hline x_9  \amp = 3.6    \amp   y_9  \amp = 0.90450 + 0.4(0.90450)(1 - 0.90450)\\ \amp       \amp     \amp = 0.93905\\ \hline x_{10}\amp = 4.0    \amp   y_{10}\amp = 0.93905 + 0.4(0.93905)(1 - 0.93905)\\ \amp       \amp     \amp = 0.96194\\ \hline \end{array}
-          </me>
+          <md>
+            <mrow> x_0  \amp = 0      \amp    y_0  \amp = 0.25 </mrow>
+            <mrow> x_1   \amp = 0.4    \amp   y_1   \amp = 0.25 + 0.4(0.25)(1-0.25) </mrow>
+            <mrow> \amp       \amp     \amp = 0.325 </mrow>
+            <mrow> x_2   \amp = 0.8     \amp    y_2   \amp = 0.325 + 0.4(0.325)(1-0.325) </mrow>
+            <mrow>  \amp       \amp     \amp = 0.41275 </mrow>
+            <mrow> x_3  \amp = 1.2    \amp   y_3   \amp = 0.41275 + 0.4(0.41275)(1-0.41275)</mrow>
+            <mrow>  \amp       \amp     \amp = 0.50970 </mrow>
+            <mrow>  x_4  \amp = 1.6    \amp   y_4  \amp = 0.50970 + 0.4(0.50970)(1 - 0.50970) </mrow>
+            <mrow> \amp       \amp     \amp = 0.60966 </mrow>
+            <mrow>  x_5  \amp = 2.0    \amp    y_5  \amp = 0.60966 + 0.4(0.60966)(1-0.60966)</mrow>
+            <mrow> \amp       \amp     \amp =  0.70485 </mrow>
+            <mrow> x_6   \amp = 2.4    \amp   y_6   \amp = 0.70485 + 0.4(0.70485)(1 - 0.70485) </mrow>
+            <mrow> \amp       \amp     \amp = 0.78806</mrow>
+            <mrow> x_7   \amp = 2.8     \amp    y_7   \amp = 0.78806 + 0.4(0.78806)(1-0.78806) </mrow>
+            <mrow> \amp       \amp     \amp = 0.85487 </mrow>
+            <mrow> x_8  \amp = 3.2    \amp   y_8   \amp = 0.85487 + 0.4(0.85487)(1-0.85487)</mrow>
+            <mrow>  \amp       \amp     \amp = 0.90450</mrow>
+            <mrow> x_9  \amp = 3.6    \amp   y_9  \amp = 0.90450 + 0.4(0.90450)(1 - 0.90450)</mrow>
+            <mrow> \amp       \amp     \amp = 0.93905 </mrow>
+            <mrow> x_{10}\amp = 4.0    \amp   y_{10}\amp = 0.93905 + 0.4(0.93905)(1 - 0.93905) </mrow>
+            <mrow> \amp       \amp     \amp = 0.96194 </mrow>
+          </md>.
         </p>
         <p>
           These 11 points, along with the the analytic solution,
@@ -776,10 +885,12 @@
         </p>
       </solution>
     </example>
+
     <figure xml:id="fig_20_01_euler3">
       <caption>Euler's Method approximation to <m>\yp = y(1-y)</m> with <m>y(0) = 0.25</m> from <xref ref="ex_euler3">Example</xref>, along with the analytical solution.</caption>
       <img src="figures/fig20_01_euler3"/>
     </figure>
+
     <p>
       The study of differential equations is a natural extension of the study of derivatives and integrals.
       The equations themselves involve derivatives,
@@ -796,469 +907,583 @@
       we explore two techniques to find analytic solutions to two different classes of differential equations.
     </p>
   </subsection>
-  <subsection>
-    <title>Terms and Concepts</title>
-    <exercise>
-      <statement>
-        <p>
-          In your own words, what is an initial value problem,
-          and how is it different than a differential equation?
-        </p>
-      </statement>
-      <answer>
-        <p>
-          An initial value problems is a differential equation that is paired with one or more initial conditions.
-          A differential equation is simply the equation without the initial conditions.
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          In your own words,
-          describe what it means for a function to be a solution to a differential equation.
-        </p>
-      </statement>
-      <answer>
-        <p>
-          Answers will vary.
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          How can we verify that a function is a solution to a differential equation?
-        </p>
-      </statement>
-      <answer>
-        <p>
-          Substitute the proposed function into the differential equation,
-          and show the the statement is satisfied.
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Describe the difference between a particular solution and a general solution.
-        </p>
-      </statement>
-      <answer>
-        <p>
-          A particular solution is one specifica member of a family of solutions,
-          and has no arbitrary constants.
-          A general solution is a family of solutions,
-          includes all possible solutions to the differential equation,
-          and typically includes one or more arbitrary constants.
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Why might we use a graphical or numerical technique to study solutions to a differential equation instead of simply solving the differential equation to find an analytic solution?
-        </p>
-      </statement>
-      <answer>
-        <p>
-          Many differential equations are impossible to solve analytically.
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Describe the considerations that should be made when choosing an <m>h</m> value to use in a numerical method like Euler's Method.
-        </p>
-      </statement>
-      <answer>
-        <p>
-          A smaller <m>h</m> value leads to a numerical solution that is closer to the true solution,
-          but decreasing the <m>h</m> value leads to more computational effort.
-        </p>
-      </answer>
-    </exercise>
-  </subsection>
-  <subsection>
-    <title>Problems</title>
-    <p>
-      In the following exercises,
-      verify that the given function is a solution to the differential equation or initial value problem.
-    </p>
-    <exercise>
-      <statement>
-        <p>
-          <m>y = Ce^{-6x^2}</m>; <m>\yp = -12xy</m>.
-        </p>
-      </statement>
-      <answer>
-        <p>
-          Answers will vary.
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>y = x\sin x</m>;
-          <m>\yp - x\cos x= (x^2+1)\sin x - xy</m>, with <m>y(\pi) = 0</m>.
-        </p>
-      </statement>
-      <answer>
-        <p>
-          Answers will vary.
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>2x^2-y^2=C</m>; <m>y\yp-2x = 0</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          Answers will vary.
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>y=xe^x</m>; <m>\yp' - 2\yp + y = 0</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          Answers will vary.
-        </p>
-      </answer>
-    </exercise>
-    <p>
-      In the following exercises,
-      verify that the given function is a solution to the differential equation and find the <m>C</m> value required to make the function satisfy the initial condition.
-    </p>
-    <exercise>
-      <statement>
-        <p>
-          <m>y = 4e^{3x}\sin x + Ce^{3x}</m>;
-          <m>\yp - 3y = 4e^{3x}\cos x</m>, with <m>y(0)=2</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>C = 2</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>y(x^2+y) = C</m>; <m>2xy + (x^2+2y)\yp= 0</m>, with <m>y(1)=2</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>C = 6</m>
-        </p>
-      </answer>
-    </exercise>
-    <p>
-      In the following exercises,
-      sketch a slope field for the given differential equation.
-      Let <m>x</m> and <m>y</m> range between <m>-2</m> and <m>2</m>.
-    </p>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = y-x</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <img src="figures/fig20_01_ex_11ans"/>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = \displaystyle \frac{x}{2y}</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <img src="figures/fig20_01_ex_12ans"/>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = \sin(\pi y)</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <img src="figures/fig20_01_ex_13ans"/>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = \frac{y}{4}</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <img src="figures/fig20_01_ex_30ans"/>
-        </p>
-      </answer>
-    </exercise>
-    <p>
-      In the following exercises,
-      match the slope field with the appropriate differential equation.
-    </p>
-    <sidebyside>
-      <img src="figures/fig20_01_ex_14_a"/>
-      {(b)} <img src="figures/fig20_01_ex_14_b"/>
-      <img src="figures/fig20_01_ex_14_c"/>
-      {(d)} <img src="figures/fig20_01_ex_14_d"/>
-    </sidebyside>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = xy</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          b
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = -y</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          c
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = -x</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          d
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = x(1-x)</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          a
-        </p>
-      </answer>
-    </exercise>
-    <p>
-      In the following exercises,
-      sketch the slope field for the differential equation,
-      and use it to draw a sketch of the solution to the initial value problem.
-    </p>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = \displaystyle \frac{y}{x} - y</m>, with <m>y(0.5)=1</m>.
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <img src="figures/fig20_01_ex_18ans"/>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = y\sin x</m>, with <m>y(0)=1</m>.
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <img src="figures/fig20_01_ex_19ans"/>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = y^2-3y+2</m>, with <m>y(0)=2</m>.
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <img src="figures/fig20_01_ex_20ans"/>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp = -\frac{xy}{1+x^2}</m>, with <m>y(0)=1</m>.
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <img src="figures/fig20_01_ex_31ans"/>
-        </p>
-      </answer>
-    </exercise>
-    <p>
-      In the following exercises,
-      use Euler's Method to make a table of values that approximates the solution to the initial value problem on the given interval.
-      Use the specified <m>h</m> or <m>N</m> value.
-    </p>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = x+2y</m>
-        </p>
-        <p>
-          <m>y(0)=1</m>
-        </p>
-        <p>
-          interval: <m>[0,1]</m>
-        </p>
-        <p>
-          <m>h=0.25</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\begin{array}{l | l} x_i \amp y_i \\ \hline 0.00 \amp 1.0000 \\ 0.25 \amp 1.5000 \\ 0.50 \amp 2.3125 \\ 0.75 \amp 3.5938 \\ 1.00 \amp 5.5781 \end{array}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = xe^{-y}</m>
-        </p>
-        <p>
-          <m>y(0)=1</m>
-        </p>
-        <p>
-          interval: <m>[0,0.5]</m>
-        </p>
-        <p>
-          <m>N=5</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\begin{array}{l | l} x_i \amp y_i \\ \hline 0.0 \amp 1.0000 \\ 0.1 \amp 1.0000 \\ 0.2 \amp 1.0037 \\ 0.3 \amp 1.0110 \\ 0.4 \amp 1.0219 \\ 0.5 \amp 1.0363 \end{array}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = y + \sin x</m>
-        </p>
-        <p>
-          <m>y(0)=2</m>
-        </p>
-        <p>
-          interval: <m>[0,1]</m>
-        </p>
-        <p>
-          <m>h = 0.2</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\begin{array}{l | l} x_i \amp y_i \\ \hline 0.0 \amp 2.0000 \\ 0.2 \amp 2.4000 \\ 0.4 \amp 2.9197 \\ 0.6 \amp 3.5816 \\ 0.8 \amp 4.4108 \\ 1.0 \amp 5.4364 \end{array}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = e^{x-y}</m>
-        </p>
-        <p>
-          <m>y(0)=0</m>
-        </p>
-        <p>
-          interval: <m>[0,2]</m>
-        </p>
-        <p>
-          <m>h = 0.5</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\begin{array}{l | l} x_i \amp y_i \\ \hline 0.0 \amp 0.0000 \\ 0.5 \amp 0.5000 \\ 1.0 \amp 1.8591 \\ 1.5 \amp 10.5824 \\ 2.0 \amp 88378.1190 \end{array}</m>
-        </p>
-      </answer>
-    </exercise>
-    <p>
-      In the following exercises,
-      use the provided solution <m>y(x)</m> and Euler's Method with the <m>h=0.2</m> and <m>h=0.1</m> to complete the following table.
-      <me>
-        \begin{array}{| l | l | l | l | l | l | l |} \hline x                           \amp  0.0 \amp  0.2 \amp  0.4 \amp  0.6 \amp  0.8 \amp  1.0 \\ \hline y(x) \amp      \amp      \amp      \amp      \amp      \amp      \\ \hline h = 0.2                     \amp      \amp      \amp      \amp      \amp      \amp      \\ \hline h = 0.1                     \amp      \amp      \amp      \amp      \amp      \amp \\ \hline \end{array}
-      </me>
-    </p>
-    <exercise>
-      <statement>
-        <p>
-          <m>\yp = xy^2</m>
-        </p>
-        <p>
-          <m>y(0)=1</m>
-        </p>
-        <p>
-          solution: <m>\displaystyle y(x) = \frac{2}{1-x^2}</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\begin{array}{l | l | l | l} x_i \amp y(x) \amp <m>h=0.2</m> \amp h = 0.1 \\ \hline 0.0 \amp 1.0000 \amp 1.0000 \amp 1.0000 \\ 0.2 \amp 1.0204 \amp 1.0000 \amp 1.0100 \\ 0.4 \amp 1.0870 \amp 1.0400 \amp 1.0623 \\ 0.6 \amp 1.2195 \amp 1.1265 \amp 1.1687 \\ 0.8 \amp 1.4706 \amp 1.2788 \amp 1.3601 \\ 1.0 \amp 2.0000 \amp 1.5405 \amp 1.7129 \end{array}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp = xe^{x^2}+\frac{1}{2}xy</m>
-        </p>
-        <p>
-          <m>\displaystyle y(0)=\frac{1}{2}</m>
-        </p>
-        <p>
-          solution: <m>\displaystyle y(x) = \frac{1}{2}(x^2+1)e^{x^2}</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\begin{array}{l | l | l | l} x_i \amp y(x) \amp h = 0.2 \amp h = 0.1 \\ \hline 0.0 \amp 0.5000 \amp 0.5000 \amp 0.5000 \\ 0.2 \amp 0.5412 \amp 0.5000 \amp 0.5201 \\ 0.4 \amp 0.6806 \amp 0.5816 \amp 0.6282 \\ 0.6 \amp 0.9747 \amp 0.7686 \amp 0.8622 \\ 0.8 \amp 1.5551 \amp 1.1250 \amp 1.3132 \\ 1.0 \amp 2.7183 \amp 1.7885 \amp 2.1788 \end{array}</m>
-        </p>
-      </answer>
-    </exercise>
-  </subsection>
+
+  <exercises>
+    <exercisegroup>
+      <introduction>
+        <p>
+          Terms and Concepts
+        </p>
+      </introduction>
+      <exercise>
+        <statement>
+          <p>
+            In your own words, what is an initial value problem,
+            and how is it different than a differential equation?
+          </p>
+        </statement>
+        <answer>
+          <p>
+            An initial value problems is a differential equation that is paired with one or more initial conditions.
+            A differential equation is simply the equation without the initial conditions.
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            In your own words,
+            describe what it means for a function to be a solution to a differential equation.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Answers will vary.
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            How can we verify that a function is a solution to a differential equation?
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Substitute the proposed function into the differential equation,
+            and show the the statement is satisfied.
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Describe the difference between a particular solution and a general solution.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            A particular solution is one specifica member of a family of solutions,
+            and has no arbitrary constants.
+            A general solution is a family of solutions,
+            includes all possible solutions to the differential equation,
+            and typically includes one or more arbitrary constants.
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Why might we use a graphical or numerical technique to study solutions to a differential equation instead of simply solving the differential equation to find an analytic solution?
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Many differential equations are impossible to solve analytically.
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Describe the considerations that should be made when choosing an <m>h</m> value to use in a numerical method like Euler's Method.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            A smaller <m>h</m> value leads to a numerical solution that is closer to the true solution,
+            but decreasing the <m>h</m> value leads to more computational effort.
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup>
+      <introduction>
+        <p>
+          In the following exercises,
+          verify that the given function is a solution to the differential equation or initial value problem.
+        </p>
+      </introduction>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>y = Ce^{-6x^2}</m>; <m>\yp = -12xy</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Answers will vary.
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>y = x\sin x</m>;
+            <m>\yp - x\cos x= (x^2+1)\sin x - xy</m>, with <m>y(\pi) = 0</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Answers will vary.
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>2x^2-y^2=C</m>; <m>y\yp-2x = 0</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Answers will vary.
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>y=xe^x</m>; <m>\yp' - 2\yp + y = 0</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Answers will vary.
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
+        <p>
+          In the following exercises,
+          verify that the given function is a solution to the differential equation and find the <m>C</m> value required to make the function satisfy the initial condition.
+        </p>
+      </introduction>
+      <exercise>
+        <statement>
+          <p>
+            <m>y = 4e^{3x}\sin x + Ce^{3x}</m>;
+            <m>\yp - 3y = 4e^{3x}\cos x</m>, with <m>y(0)=2</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>C = 2</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>y(x^2+y) = C</m>; <m>2xy + (x^2+2y)\yp= 0</m>, with <m>y(1)=2</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>C = 6</m>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
+        <p>
+          In the following exercises,
+          sketch a slope field for the given differential equation.
+          Let <m>x</m> and <m>y</m> range between <m>-2</m> and <m>2</m>.
+        </p>
+      </introduction>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = y-x</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <img src="figures/fig20_01_ex_11ans"/>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = \displaystyle \frac{x}{2y}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <img src="figures/fig20_01_ex_12ans"/>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = \sin(\pi y)</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <img src="figures/fig20_01_ex_13ans"/>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = \frac{y}{4}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <img src="figures/fig20_01_ex_30ans"/>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
+        <p>
+          Match each slope field in <xref ref="fig_slopefield_exercise"/> with the appropriate differential equation.
+        </p>
+        <figure xml:id="fig_slopefield_exercise">
+          <sbsgroup>
+            <sidebyside widths="40%">
+              <figure>
+                <caption/>
+                <img src="figures/fig20_01_ex_14_a"/>
+              </figure>
+              <figure>
+                <caption/>
+                <img src="figures/fig20_01_ex_14_b"/>
+              </figure>
+            </sidebyside>
+            <sidebyside widths="40%">
+              <figure>
+                <caption/>
+                <img src="figures/fig20_01_ex_14_c"/>
+              </figure>
+              <figure>
+                <caption/>
+                <img src="figures/fig20_01_ex_14_d"/>
+              </figure>
+            </sidebyside>
+          </sbsgroup>
+        </figure>
+      </introduction>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = xy</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            b
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = -y</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            c
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = -x</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            d
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = x(1-x)</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            a
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
+        <p>
+          In the following exercises,
+          sketch the slope field for the differential equation,
+          and use it to draw a sketch of the solution to the initial value problem.
+        </p>
+      </introduction>
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = \displaystyle \frac{y}{x} - y</m>, with <m>y(0.5)=1</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <img src="figures/fig20_01_ex_18ans"/>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = y\sin x</m>, with <m>y(0)=1</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <img src="figures/fig20_01_ex_19ans"/>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = y^2-3y+2</m>, with <m>y(0)=2</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <img src="figures/fig20_01_ex_20ans"/>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = -\frac{xy}{1+x^2}</m>, with <m>y(0)=1</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <img src="figures/fig20_01_ex_31ans"/>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
+        <p>
+          In the following exercises,
+          use Euler's Method to make a table of values that approximates the solution to the initial value problem on the given interval.
+          Use the specified <m>h</m> or <m>N</m> value.
+        </p>
+      </introduction>
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = x+2y</m>
+          </p>
+          <p>
+            <m>y(0)=1</m>
+          </p>
+          <p>
+            interval: <m>[0,1]</m>
+          </p>
+          <p>
+            <m>h=0.25</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <md>
+              <mrow> x_i \amp y_i</mrow>
+              <mrow> 0.00 \amp 1.0000 </mrow>
+              <mrow>  0.25 \amp 1.5000 </mrow>
+              <mrow> 0.50 \amp 2.3125 </mrow>
+              <mrow> 0.75 \amp 3.5938</mrow>
+              <mrow> 1.00 \amp 5.5781 </mrow>
+            </md>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = xe^{-y}</m>
+          </p>
+          <p>
+            <m>y(0)=1</m>
+          </p>
+          <p>
+            interval: <m>[0,0.5]</m>
+          </p>
+          <p>
+            <m>N=5</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <md>
+              <mrow> x_i \amp y_i </mrow>
+              <mrow>  0.0 \amp 1.0000 </mrow>
+              <mrow> 0.1 \amp 1.0000 </mrow>
+              <mrow> 0.2 \amp 1.0037 </mrow>
+              <mrow> 0.3 \amp 1.0110 </mrow>
+              <mrow> 0.4 \amp 1.0219 </mrow>
+              <mrow> 0.5 \amp 1.0363 </mrow>
+            </md>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = y + \sin x</m>
+          </p>
+          <p>
+            <m>y(0)=2</m>
+          </p>
+          <p>
+            interval: <m>[0,1]</m>
+          </p>
+          <p>
+            <m>h = 0.2</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <md>
+              <mrow> x_i \amp y_i </mrow>
+              <mrow> 0.0 \amp 2.0000 </mrow>
+              <mrow> 0.2 \amp 2.4000 </mrow>
+              <mrow> 0.4 \amp 2.9197 </mrow>
+              <mrow> 0.6 \amp 3.5816 </mrow>
+              <mrow> 0.8 \amp 4.4108 </mrow>
+              <mrow> 1.0 \amp 5.4364 </mrow>
+            </md>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = e^{x-y}</m>
+          </p>
+          <p>
+            <m>y(0)=0</m>
+          </p>
+          <p>
+            interval: <m>[0,2]</m>
+          </p>
+          <p>
+            <m>h = 0.5</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <md>
+              <mrow> x_i \amp y_i </mrow>
+              <mrow> 0.0 \amp 0.0000 </mrow>
+              <mrow> 0.5 \amp 0.5000 </mrow>
+              <mrow>  1.0 \amp 1.8591 </mrow>
+              <mrow> 1.5 \amp 10.5824 </mrow>
+              <mrow> 2.0 \amp 88378.1190 </mrow>
+            </md>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
+        <p>
+          In the following exercises,
+          use the provided solution <m>y(x)</m> and Euler's Method with the <m>h=0.2</m> and <m>h=0.1</m> to complete the following table.
+        </p>
+        <sidebyside>
+          <tabular>
+            <row bottom="minor">
+              <cell><m> x</m></cell><cell><m> 0.0</m></cell><cell> <m>0.2</m></cell><cell><m>0.4</m></cell><cell> <m>0.6</m> </cell><cell> <m>0.8</m> </cell><cell> <m>1.0</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell><m> y(x)</m></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell><m>h = 0.2</m></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell>
+            </row>
+            <row>
+              <cell><m>h = 0.1</m></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell>
+            </row>
+          </tabular>
+        </sidebyside>
+        </p>
+      </introduction>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\yp = xy^2</m>
+          </p>
+          <p>
+            <m>y(0)=1</m>
+          </p>
+          <p>
+            Solution: <m>\displaystyle y(x) = \frac{2}{1-x^2}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <md>
+              <mrow> x_i \amp y(x) \amp <m>h=0.2</m> \amp h = 0.1 </mrow>
+              <mrow> 0.0 \amp 1.0000 \amp 1.0000 \amp 1.0000 </mrow>
+              <mrow> 0.2 \amp 1.0204 \amp 1.0000 \amp 1.0100 </mrow>
+              <mrow> 0.4 \amp 1.0870 \amp 1.0400 \amp 1.0623 </mrow>
+              <mrow> 0.6 \amp 1.2195 \amp 1.1265 \amp 1.1687 </mrow>
+              <mrow> 0.8 \amp 1.4706 \amp 1.2788 \amp 1.3601 </mrow>
+              <mrow> 1.0 \amp 2.0000 \amp 1.5405 \amp 1.7129 </mrow>
+            </md>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = xe^{x^2}+\frac{1}{2}xy</m>
+          </p>
+          <p>
+            <m>\displaystyle y(0)=\frac{1}{2}</m>
+          </p>
+          <p>
+            Solution: <m>\displaystyle y(x) = \frac{1}{2}(x^2+1)e^{x^2}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <md>
+              <mrow> x_i \amp y(x) \amp h = 0.2 \amp h = 0.1 </mrow>
+              <mrow> 0.0 \amp 0.5000 \amp 0.5000 \amp 0.5000 </mrow>
+              <mrow> 0.2 \amp 0.5412 \amp 0.5000 \amp 0.5201 </mrow>
+              <mrow> 0.4 \amp 0.6806 \amp 0.5816 \amp 0.6282 </mrow>
+              <mrow> 0.6 \amp 0.9747 \amp 0.7686 \amp 0.8622 </mrow>
+              <mrow> 0.8 \amp 1.5551 \amp 1.1250 \amp 1.3132 </mrow>
+              <mrow> 1.0 \amp 2.7183 \amp 1.7885 \amp 2.1788 </mrow>
+            </md>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+  </exercises>
 </section>
