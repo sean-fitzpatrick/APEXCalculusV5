@@ -23,7 +23,28 @@
 
     <figure>
       <caption>Translating words into a differential equation</caption>
-      <img src="figures/fig20_04_translation"/>
+      <image xml:id="img_20_04_translation">
+        <description></description>
+        <latex-image>
+          \begin{tikzpicture}
+
+          \draw  (1,1) node {$\displaystyle \frac{dp}{dt} = kp$};
+
+          \draw [{\colorone}] (-1,0) node [text width=60pt,align=center](a) {\scriptsize \centering The rate of change of the population};
+          \draw [{\colorone},->] (a) -- (.3,.7);
+
+          \draw [{\colorone}] (2,.25) node [text width=60pt,align=center] (b) {\scriptsize \centering the population.};
+          \draw [{\colorone},->] (b) -- (1.6,.8);
+
+          \draw [{\colorone}] (.5,2) node [text width=32pt,align=center] (c) {\scriptsize \centering is};
+          \draw [{\colorone},->] (c) -- (1,1.2);
+
+          \draw [{\colorone}] (2,2) node [text width=60pt,align=center] (d) {\scriptsize \centering proportional to};
+          \draw [{\colorone},->] (d) -- (1.4,1.2);
+
+          \end{tikzpicture}
+        </latex-image>
+      </image>
     </figure>
 
     <p>
@@ -352,14 +373,74 @@
           <caption>Plots of the functions from <xref ref="ex_disease_exponential">Example</xref> (dotted),
           <xref ref="ex_disease_newton">Example</xref> (dashed),
           and <xref ref="ex_disease_logistic">Example</xref> (solid)</caption>
-          <sidebyside width="33%">
+          <sidebyside width="45%">
             <figure xml:id="fig_diseasea">
               <caption/>
-              <img src="figures/fig20_04_disease"/>
+              <image xml:id="img_disease_a">
+                <description></description>
+                <latex-image>
+                  \begin{tikzpicture}
+
+                  \begin{axis}[width=\marginparwidth+25pt,
+                  tick label style={font=\scriptsize},
+                  %axis y line=middle,axis x line=middle,
+                  axis lines = middle,
+                  name=myplot,%
+                  %			xtick={0,1,2,3,4},%
+                  %			xticklabels={-2,-1,..,2},
+                  			ytick={0,0.05,.1},
+                  			yticklabels = {0,0.05,0.1},
+                  %			minor x tick num=1,
+                  %			extra x ticks={.25,.75},%
+                  			ymin=-.01,ymax=.11,
+                  			xmin=-.1,xmax=1.25%
+                  ]
+                  \addplot [{\colorone},thick,domain = 0:10, samples=50] {1/(1+19*exp(ln(9/19)*x)};
+                  \addplot [{\colorone},thick,domain = 0:10, samples=50,dashed] {1-.95*exp(ln(18/19)*x)};
+                  \addplot [{\colorone},thick,domain = 0:2, samples=50,dotted] {.05*exp(ln(2)*x)};
+                  \fill[black,draw=black](axis cs:0,.05) circle (1.5pt);
+                  \fill[black,draw=black](axis cs:1,.1) circle (1.5pt);
+                  \end{axis}
+                  \node [right] at (myplot.right of origin) {\scriptsize $t$};
+                  \node [above] at (myplot.above origin) {\scriptsize $y$};
+
+                  \end{tikzpicture}
+                </latex-image>
+              </image>
             </figure>
             <figure xml:id="fig_diseaseb">
               <caption/>
-              <img src="figures/fig20_04_disease1"/>
+              <image xml:id="img_disease_b">
+                <description></description>
+                <latex-image>
+                  \begin{tikzpicture}
+
+                  \begin{axis}[width=\marginparwidth+25pt,
+                  tick label style={font=\scriptsize},
+                  %axis y line=middle,axis x line=middle,
+                  axis lines = middle,
+                  name=myplot,%
+                  %			xtick={0,1,2,3,4},%
+                  %			xticklabels={-2,-1,..,2},
+                  %			ytick={0,0.5,1},
+                  %			yticklabels = {-2,-1,0,1,2},
+                  %			minor x tick num=1,
+                  %			extra x ticks={.25,.75},%
+                  			ymin=-.01,ymax=1.1,
+                  			xmin=-.1,xmax=50.1%
+                  ]
+                  \addplot [{\colorone},thick,domain = 0:50, samples=100] {1/(1+19*exp(ln(9/19)*x)};
+                  \addplot [{\colorone},thick,domain = 0:50, samples=50,dashed] {1-.95*exp(ln(18/19)*x)};
+                  \addplot [{\colorone},thick,domain = 0:5, samples=50,dotted] {.05*exp(ln(2)*x)};
+                  \fill[black,draw=black](axis cs:0,.05) circle (1.5pt);
+                  \fill[black,draw=black](axis cs:1,.1) circle (1.5pt);
+                  \end{axis}
+                  \node [right] at (myplot.right of origin) {\scriptsize $t$};
+                  \node [above] at (myplot.above origin) {\scriptsize $y$};
+
+                  \end{tikzpicture}
+                </latex-image>
+              </image>
             </figure>
           </sidebyside>
         </figure>
@@ -398,33 +479,40 @@
       (potentially different)
       rate.
     </p>
-    <p>
-      \checkoddpage\ifoddpage\setboolean{oddpg}{true}\else\setboolean{oddpg}{false}\fi \AddToShipoutPicture*{\put(427,\LenToUnit{.5\paperheight}){ \begin{minipage} <em>Note:</em>
-      The assumption about instantaneous mixing,
-      though not physically accurate,
-      leads to a differential equation we have hope of solving.
-      In reality, the amount of chemical at a specific location in the container depends both on the location and how long we have been waiting.
-      This dependence on both space and time leads to a type of differential equation called a
-      <em>partial differential equation.</em>
-      Differential equations of this type are more interesting,
-      but significantly harder to study.
-      Instantaneous mixing removes any spatial dependence from the problem,
-      and leaves us with an <em>ordinary differential equation</em>. \end{minipage}}}
-    </p>
+
+    <aside>
+      <p>
+        The assumption about instantaneous mixing,
+        though not physically accurate,
+        leads to a differential equation we have hope of solving.
+        In reality, the amount of chemical at a specific location in the container depends both on the location and how long we have been waiting.
+        This dependence on both space and time leads to a type of differential equation called a
+        <em>partial differential equation.</em>
+        Differential equations of this type are more interesting,
+        but significantly harder to study.
+        Instantaneous mixing removes any spatial dependence from the problem,
+        and leaves us with an <em>ordinary differential equation</em>.
+      </p>
+    </aside>
+
     <example xml:id="ex_equal_flow">
       <title>Equal Flow Rates</title>
       <statement>
         <p>
           Suppose a 10 liter tank has 5 liters of salt solution in it.
           The initial concentration of the salt solution is 1 gram per liter.
-          A salt solution with concentration 3 g/L flows into the tank at a rate of 2 L/min.
-          Suppose the salt solution mixes instantaneously with the solution already in the tank and that the mixed solution from the tank flows out at a rate of 2 L/min.
+          A salt solution with concentration
+          <quantity><mag>3</mag><unit base="gram"/><per base="liter"/></quantity> flows into the tank at a rate of
+          <quantity><mag>2</mag><unit base="liter"/><per base="minute"/></quantity>.
+          Suppose the salt solution mixes instantaneously with the solution already in the tank,
+          and that the mixed solution from the tank flows out at a rate of
+          <quantity><mag>2</mag><unit base="liter"/><per base="minute"/></quantity>.
           Find a function that gives the amount of salt in the tank at time <m>t</m>.
         </p>
       </statement>
       <solution>
         <p>
-          We use the rate in <m>-</m> rate out setup described above.
+          We use the rate in <ndash/> rate out setup described above.
           The quantity here is the amount
           (in grams)
           of salt in the tank at time <m>t</m>.
@@ -453,16 +541,23 @@
         </p>
         <p>
           The rate out is more complicated.
-          The flow rate is still 2 L/min,
-          meaning that the overall volume of the fluid in the bucket is the constant 5 L. The salt concentration in the bucket is not constant though,
+          The flow rate is still <quantity><mag>2</mag><unit base="liter"/><per base="minute"/></quantity>,
+          meaning that the overall volume of the fluid in the bucket is the constant
+          <quantity><mag>5</mag><unit base="liter"/></quantity>.
+          The salt concentration in the bucket is not constant though,
           meaning that the outflow concentration is not constant.
           In particular, the outflow concentration is <em>not</em>
-          the constant 1 g/L. This is simply the initial concentration.
+          the constant <quantity><mag>1</mag><unit base="liter"/><per base="minute"/></quantity>.
+          This is simply the initial concentration.
           To find the concentration at any time,
           we need the amount of salt in the bucket at that time and the volume of liquid in the bucket at that time.
-          The volume of liquid is the constant 5 L, and the amount of salt is given by the dependent variable <m>y</m>.
+          The volume of liquid is the constant <quantity><mag>5</mag><unit base="liter"/></quantity>,
+          and the amount of salt is given by the dependent variable <m>y</m>.
           Thus, the outflow concentration is
-          <m>\displaystyle \frac{y}{5}</m> g/L, yielding a rate out given by <m>\displaystyle \left(\frac{y}{5}\frac{\text{g} }{\text{L} }\right)\left(2 \frac{\text{L} }{\text{ min } }\right) = \frac{2y}{5}</m> g/min
+          <m>\displaystyle \frac{y}{5}</m> g/L, yielding a rate out given by
+          <me>
+            \left(\frac{y}{5}\frac{\text{ g } }{\text{ L } }\right)\left(2 \frac{\text{ L } }{\text{ min } }\right) = \frac{2y}{5}\text{ g/min }
+          </me>.
         </p>
         <p>
           The differential equation we wish to solve is given by
@@ -473,7 +568,7 @@
         <p>
           To furnish an initial condition,
           we must convert the initial salt concentration into an initial amount of salt.
-          This is <m>\left(1\displaystyle \frac{\text{g} }{\text{L} }\right)(5 \text{ L } ) = 5</m> g, so
+          This is <m>\left(1\displaystyle \frac{\text{ g } }{\text{ L } }\right)(5 \text{ L } ) = 5</m> g, so
           <m>y(0) = 5</m> is our initial condition.
         </p>
         <p>
@@ -487,16 +582,13 @@
         <p>
           Integration yields the implicit solution
           <me>
-            -\frac{5}{2}\ln|30 - 2y| = t+C
+            -\frac{5}{2}\ln\abs{30 - 2y} = t+C
           </me>.
         </p>
         <p>
           Solving for <m>y</m>
           (and redefining the arbitrary constant <m>C</m> as necessary)
           yields the explicit solution
-          <image>
-             <latex-image> <![CDATA[\begin{tikzpicture}[remember picture,overlay] \node [xshift=\oddpagemarginlength,yshift=\topmarginlength](tleft) at (current page.north west)  ; \draw [thick, \thelinecolor] (tleft) -- ++(0,\bottommarginlength+1in); \end{tikzpicture}]]> </latex-image>
-          </image>
           <me>
             y = 15 + Ce^{-\frac{2}{5}t}
           </me>.
@@ -517,10 +609,38 @@
         </p>
       </solution>
     </example>
+
     <figure xml:id="fig_equal_flow">
       <caption>Salt concentration at time <m>t</m>, from <xref ref="ex_equal_flow">Example</xref>.</caption>
-      <img src="figures/fig20_04_equal_flow"/>
+      <image xml:id="img_equal_flow">
+        <description></description>
+        <latex-image>
+          \begin{tikzpicture}
+
+          \begin{axis}[width=\marginparwidth+25pt,
+          tick label style={font=\scriptsize},
+          %axis y line=middle,axis x line=middle,
+          axis lines = middle,
+          name=myplot,%
+          %			xtick={0,1,2,3,4},%
+          %			xticklabels={-2,-1,..,2},
+          %			ytick={0,0.05,.1},
+          %			yticklabels = {0,0.05,0.1},
+          %			minor x tick num=1,
+          %			extra x ticks={.25,.75},%
+          			ymin=-.1,ymax=15.5,
+          			xmin=-.1,xmax=10.3%
+          ]
+          \addplot [{\colorone},thick,domain = 0:10, samples=50] {15-10*exp(-2/5*x)};
+          \end{axis}
+          \node [right] at (myplot.right of origin) {\scriptsize $t$};
+          \node [above] at (myplot.above origin) {\scriptsize $y$};
+
+          \end{tikzpicture}
+        </latex-image>
+      </image>
     </figure>
+
     <example xml:id="ex_unequal_flow">
       <title>Unequal Flow Rates</title>
       <statement>
@@ -606,216 +726,210 @@
       Even so, there are an array of graphical and numerical techniques that can be used to analyze the model to make predictions and infer information about real world phenomena.
     </p>
   </subsection>
-  <subsection>
-    <title>Problems</title>
-    <p>
-      In the following exercises,
-      use the tools in the section to answer the questions presented.
-    </p>
-    <exercise>
-      <statement>
+
+  <exercises>
+    <exercisegroup>
+      <introduction>
         <p>
-          Suppose the rate of change of <m>y</m> with respect to <m>x</m> is proportional to <m>10 - y</m>.
-          Write down and solve a differential equation for <m>y</m>.
+          In the following exercises,
+          use the tools in the section to answer the questions presented.
         </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = 10 + Ce^{-kx}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          A rumor is spreading through a middle school with 250 students.
-          Suppose the rumor spreads at a rate proportional to the number of students who haven't heard the rumor yet.
-          If 1 person starts the rumor,
-          and 75 students have heard the rumor 3 days later,
-          how many days will it take until 80% of the students in the school have heard the rumor?
-        </p>
-      </statement>
-      <answer>
-        <p>
-          13.66 days
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          A rumor is spreading through a middle school with 250 students.
-          Suppose the rumor spreads at a rate proportional to the product of number of students who have heard the rumor and the number who haven't heard the rumor.
-          If 1 person starts the rumor,
-          and 75 students have heard the rumor 3 days later,
-          how many days will it take until 80% of the students in the school have heard the rumor?
-        </p>
-      </statement>
-      <answer>
-        <p>
-          4.43 days
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          A feature of radioactive decay is that the amount of a radioactive substance decreases at a rate proportional to the current amount of the substance.
-          The <em>half life</em>
-              <idx><h>half life</h></idx>
-          of a substance is the amount of time it takes for half of a given amount of substance to decay.
-          The half life of carbon-14 is approximately 5730 years.
-          If an ancient object has a carbon-14 amount that is 20% of the original amount,
-          how old is the object?
-        </p>
-      </statement>
-      <answer>
-        <p>
-          13,304.65 years old
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Consider a chemical reaction where molecules of type A combine with molecules of type B to form molecules of type C. Suppose one molecule of type A combines with one molecule of type B to form one molecule of type C, and that type C is produced at a rate proportional the product of the remaining number of molecules of types A and B. Let <m>x</m> denote moles of molecules of type <m>C</m>.
-          Find a function giving the number of moles of type C at time <m>t</m> if there are originally <m>a</m> moles of type A, <m>b</m> moles of type B, and zero moles of type C.
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>x = \begin{cases}\displaystyle\frac{ab(1 - e^{(a-b)kt})}{b-ae^{(a-b)kt}} \amp \text{ if } a \neq b\\ \displaystyle \frac{a^2kt}{1+akt} \amp \text{ if } a = b \end{cases}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Suppose an object with a temperature of 100<m>^\circ</m> is introduced into a room with an ambient temperature of 70<m>^\circ</m>.
-          Suppose the temperature of the object changes at a rate proportional to the difference between the temperature of the object and the temperature of the room (Newton's Law of Cooling).
-          If the object has cooled to 92<m>^\circ</m> in 10 minutes,
-          how long until the object has cooled to 84<m>^\circ?</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          24.57 minutes
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Suppose an object with a temperature of 100<m>^\circ</m> is introduced into a room with an ambient temperature given by <m>60 + 20e^{-\frac{1}{4}t}</m> degrees.
-          Suppose the temperature of the object changes at a rate proportional to the difference between the temperature of the object and the temperature of the room (Newton's Law of Cooling).
-          If the object is 80<m>^\circ</m> after 20 minutes,
-          find a formula giving the temperature of the object at time <m>t</m>.
-          (Note: This problem requires a numerical technique to solve for the unknown constants.)
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\displaystyle y = 60 - 3.69858e^{-\frac{1}{4}t} + 43.69858e^{-0.0390169 t}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          A tank contains 5 gallons of salt solution with concentration 0.5 g/gal.
-          Pure water flows into the tank at a rate of 1 gallon per minute.
-          Salt solution flows out of the tank at a rate of 1 gallon per minute.
-          (Assume instantaneous mixing.)
-          Find the concentration of the salt solution at 10 minutes.
-        </p>
-      </statement>
-      <answer>
-        <p>
-          0.06767 g/gal
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Dead leaves accumulate on the ground at a rate of 4 grams per square centimeter per year.
-          The dead leaves on the ground decompose at a rate of 50% per year.
-          Find a formula giving grams per square centimeter on the ground if there are no leaves on the ground at time <m>t=0</m>.
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = 8(1-e^{-\frac{1}{2}t})</m> g/cm<m>^2</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          A pond initially contains 10 million gallons of fresh water.
-          Water containing an undesirable chemical flows into the pond at a rate of 5 million gallons per year,
-          and fluid from the pond flows out at the same rate.
-          (Assume instantaneous mixing.)
-          If the concentration
-          (in grams per million gallons)
-          of the incoming chemical varies periodically according to the expression <m>2 + \sin(2t)</m>,
-          find a formula giving the amount of chemical in the pond at time <m>t</m>.
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = \displaystyle 20 - \frac{10}{17}\left (4\cos(2t)- \sin(2t)\right) - \frac{300}{17}e^{-\frac{1}{2}t}</m> g
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          A large tank contains 1 gallon of a salt solution with concentration 2 g/gal.
-          A salt solution with concentration 1 g/gal flows into the tank at a rate of 4 gal/min.
-          Salt solution flows out of the tank at a rate of 3 gal/min.
-          (Assume instantaneous mixing.)
-          Find the amount of salt in the tank at 10 minutes.
-        </p>
-      </statement>
-      <answer>
-        <p>
-          11.00075 g
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          A stream flows into a pond containing 2 million gallons of fresh water at a rate of 1 million gallons per day.
-          The stream flows out of the first pond and into a second pond containing 3 million gallons of fresh water.
-          The stream then flows out of the second pond.
-          Suppose the inflow and outflow rates are the same so that both ponds maintain their volumes.
-          A factory upstream of the first pond starts polluting the stream.
-          Directly below the factory,
-          pollutant has a concentration of 55 grams per million gallons,
-          and this concentration starts to flow into the first pond.
-          Find the concentration of pollutant in the first and second ponds at 5 days.
-        </p>
-      </statement>
-      <answer>
-        <p>
-          pond 1: 50.4853 grams per million gallons
-        </p>
-        <p>
-          pond 2: 32.8649 grams per million gallons
-        </p>
-      </answer>
-    </exercise>
-    <p>
-      \qendheader \newgeometry{inner=72pt,
-      outer=36pt,textheight=10in, marginparwidth=150pt, marginparsep=32pt, }
-    </p>
-  </subsection>
-  <subsection>
-    <title>PLACEHOLDER</title>
-    <p>
-      \cleardoublepage
-    </p>
-  </subsection>
+      </introduction>
+      <exercise>
+        <statement>
+          <p>
+            Suppose the rate of change of <m>y</m> with respect to <m>x</m> is proportional to <m>10 - y</m>.
+            Write down and solve a differential equation for <m>y</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = 10 + Ce^{-kx}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            A rumor is spreading through a middle school with 250 students.
+            Suppose the rumor spreads at a rate proportional to the number of students who haven't heard the rumor yet.
+            If 1 person starts the rumor,
+            and 75 students have heard the rumor 3 days later,
+            how many days will it take until 80% of the students in the school have heard the rumor?
+          </p>
+        </statement>
+        <answer>
+          <p>
+            13.66 days
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            A rumor is spreading through a middle school with 250 students.
+            Suppose the rumor spreads at a rate proportional to the product of number of students who have heard the rumor and the number who haven't heard the rumor.
+            If 1 person starts the rumor,
+            and 75 students have heard the rumor 3 days later,
+            how many days will it take until 80% of the students in the school have heard the rumor?
+          </p>
+        </statement>
+        <answer>
+          <p>
+            4.43 days
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            A feature of radioactive decay is that the amount of a radioactive substance decreases at a rate proportional to the current amount of the substance.
+            The <em>half life</em>
+                <idx><h>half life</h></idx>
+            of a substance is the amount of time it takes for half of a given amount of substance to decay.
+            The half life of carbon-14 is approximately 5730 years.
+            If an ancient object has a carbon-14 amount that is 20% of the original amount,
+            how old is the object?
+          </p>
+        </statement>
+        <answer>
+          <p>
+            13,304.65 years old
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Consider a chemical reaction where molecules of type A combine with molecules of type B to form molecules of type C. Suppose one molecule of type A combines with one molecule of type B to form one molecule of type C, and that type C is produced at a rate proportional the product of the remaining number of molecules of types A and B. Let <m>x</m> denote moles of molecules of type <m>C</m>.
+            Find a function giving the number of moles of type C at time <m>t</m> if there are originally <m>a</m> moles of type A, <m>b</m> moles of type B, and zero moles of type C.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>x = \begin{cases}\displaystyle\frac{ab(1 - e^{(a-b)kt})}{b-ae^{(a-b)kt}} \amp \text{ if } a \neq b\\ \displaystyle \frac{a^2kt}{1+akt} \amp \text{ if } a = b \end{cases}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Suppose an object with a temperature of 100<m>^\circ</m> is introduced into a room with an ambient temperature of 70<m>^\circ</m>.
+            Suppose the temperature of the object changes at a rate proportional to the difference between the temperature of the object and the temperature of the room (Newton's Law of Cooling).
+            If the object has cooled to 92<m>^\circ</m> in 10 minutes,
+            how long until the object has cooled to 84<m>^\circ?</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            24.57 minutes
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Suppose an object with a temperature of 100<m>^\circ</m> is introduced into a room with an ambient temperature given by <m>60 + 20e^{-\frac{1}{4}t}</m> degrees.
+            Suppose the temperature of the object changes at a rate proportional to the difference between the temperature of the object and the temperature of the room (Newton's Law of Cooling).
+            If the object is 80<m>^\circ</m> after 20 minutes,
+            find a formula giving the temperature of the object at time <m>t</m>.
+            (Note: This problem requires a numerical technique to solve for the unknown constants.)
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\displaystyle y = 60 - 3.69858e^{-\frac{1}{4}t} + 43.69858e^{-0.0390169 t}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            A tank contains 5 gallons of salt solution with concentration 0.5 g/gal.
+            Pure water flows into the tank at a rate of 1 gallon per minute.
+            Salt solution flows out of the tank at a rate of 1 gallon per minute.
+            (Assume instantaneous mixing.)
+            Find the concentration of the salt solution at 10 minutes.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            0.06767 g/gal
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Dead leaves accumulate on the ground at a rate of 4 grams per square centimeter per year.
+            The dead leaves on the ground decompose at a rate of 50% per year.
+            Find a formula giving grams per square centimeter on the ground if there are no leaves on the ground at time <m>t=0</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = 8(1-e^{-\frac{1}{2}t})</m> g/cm<m>^2</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            A pond initially contains 10 million gallons of fresh water.
+            Water containing an undesirable chemical flows into the pond at a rate of 5 million gallons per year,
+            and fluid from the pond flows out at the same rate.
+            (Assume instantaneous mixing.)
+            If the concentration
+            (in grams per million gallons)
+            of the incoming chemical varies periodically according to the expression <m>2 + \sin(2t)</m>,
+            find a formula giving the amount of chemical in the pond at time <m>t</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = \displaystyle 20 - \frac{10}{17}\left (4\cos(2t)- \sin(2t)\right) - \frac{300}{17}e^{-\frac{1}{2}t}</m> g
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            A large tank contains 1 gallon of a salt solution with concentration 2 g/gal.
+            A salt solution with concentration 1 g/gal flows into the tank at a rate of 4 gal/min.
+            Salt solution flows out of the tank at a rate of 3 gal/min.
+            (Assume instantaneous mixing.)
+            Find the amount of salt in the tank at 10 minutes.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            11.00075 g
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            A stream flows into a pond containing 2 million gallons of fresh water at a rate of 1 million gallons per day.
+            The stream flows out of the first pond and into a second pond containing 3 million gallons of fresh water.
+            The stream then flows out of the second pond.
+            Suppose the inflow and outflow rates are the same so that both ponds maintain their volumes.
+            A factory upstream of the first pond starts polluting the stream.
+            Directly below the factory,
+            pollutant has a concentration of 55 grams per million gallons,
+            and this concentration starts to flow into the first pond.
+            Find the concentration of pollutant in the first and second ponds at 5 days.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            pond 1: 50.4853 grams per million gallons
+          </p>
+          <p>
+            pond 2: 32.8649 grams per million gallons
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+  </exercises>
 </section>

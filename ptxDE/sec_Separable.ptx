@@ -16,12 +16,13 @@
       <title>Separable Differential Equation</title>
       <statement>
         <p>
-          A <term>separable differential equation</term><idx><h>differential equation</h><h>separable</h></idx> is one that can be written in the form
+          A <term>separable differential equation</term> is one that can be written in the form
           <me>
             \displaystyle n(y) \frac{dy}{dx} = m(x)
           </me>,
           where <m>n</m> is a function that depends only on the dependent variable <m>y</m>,
           and <m>m</m> is a function that depends only on the independent variable <m>x</m>.
+          <idx><h>differential equation</h><h>separable</h></idx>
         </p>
       </statement>
     </definition>
@@ -32,45 +33,21 @@
     <sidebyside>
       <em>Separable</em>
       <ol>
-        <li>
-          <p>
-            <m>\displaystyle \frac{dy}{dx} = x^2y</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>\displaystyle y\sqrt{y^2-5} \frac{dy}{dx} - \sin x \cos x = 0</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>\displaystyle \frac{dy}{dx} = \frac{(x^2 + 1)e^{y}}{y}</m>
-          </p>
-        </li>
+        <li><m>\displaystyle \frac{dy}{dx} = x^2y</m></li>
+        <li><m>\displaystyle y\sqrt{y^2-5} \frac{dy}{dx} - \sin x \cos x = 0</m></li>
+        <li><m>\displaystyle \frac{dy}{dx} = \frac{(x^2 + 1)e^{y}}{y}</m></li>
       </ol>
       <em>Not Separable</em>
       <ol>
-        <li>
-          <p>
-            <m>\displaystyle \frac{dy}{dx} = x^2 + y</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>\displaystyle y\sqrt{y^2-1} \frac{dy}{dx} - \sin x \cos y = 0</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>\displaystyle \frac{dy}{dx} = \frac{(xy + 1)e^{y}}{y}</m>
-          </p>
-        </li>
+        <li xml:id="item-not-sep"><m>\displaystyle \frac{dy}{dx} = x^2 + y</m></li>
+        <li><m>\displaystyle y\sqrt{y^2-1} \frac{dy}{dx} - \sin x \cos y = 0</m></li>
+        <li><m>\displaystyle \frac{dy}{dx} = \frac{(xy + 1)e^{y}}{y}</m></li>
       </ol>
     </sidebyside>
     <p>
       Notice that a separable equation requires that the functions of the dependent and independent variables be multiplied,
       not added
-      (like example 1 of the not separable column).
+      (like <xref ref="item-not-sep">item</xref> in the <q>Not Separable</q> column).
       An alternate definition of a separable differential equation states that an equation is separable if it can be written in the form
       <me>
         \frac{dy}{dx} = f(x)g(y)
@@ -125,7 +102,8 @@
     </p>
     <p>
       Though the technique outlined above is formally correct,
-      what we did essentially amounts to integrating the function <m>n</m> with respect to its variable and integrating the function <m>m</m> with respect to its variable.
+      what we did essentially amounts to integrating the function <m>n</m> with respect to its variable and integrating the function
+      <m>m</m> with respect to its variable.
       The informal way to solve a separable equation is to treat the derivative
       <m>\displaystyle \frac{dy}{dx}</m> as if it were a fraction.
       The separated form of the equation is
@@ -139,7 +117,7 @@
       we can find an implicit form for the solution.
       Sometimes we are able to solve for <m>y</m> in the implicit solution to find an explicit form of the solution to the differential equation.
       We practice the technique by solving the three differential equations listed in the separable column above,
-      and conclude by revisiting and finding the general solution to the logistic differential equation from <xref ref="sec_Graphical_Numerical">Section</xref>
+      and conclude by revisiting and finding the general solution to the logistic differential equation from <xref ref="sec_Graphical_Numerical">Section</xref>.
     </p>
     <example xml:id="ex_separable_DE">
       <title>Solving a Separable Differential Equation</title>
@@ -160,7 +138,7 @@
         <p>
           Integrating the left hand side of the equation with respect to <m>y</m> and the right hand side of the equation with respect to <m>x</m> yields
           <me>
-            \ln |y| = \frac{1}{3}x^3 + C
+            \ln \abs{y} = \frac{1}{3}x^3 + C
           </me>.
         </p>
         <p>
@@ -168,9 +146,19 @@
           Solving for <m>y</m> yields an explicit form for the solution.
           Exponentiating both sides, we have
           <me>
-            |y| = e^{x^3/3 + C} = e^{x^3/3}e^C
+            \abs{y} = e^{x^3/3 + C} = e^{x^3/3}e^C
           </me>.
         </p>
+
+        <aside>
+          <p>
+            The indefinite integrals <m>\int \frac{dy}{y}</m> and
+            <m>\int x^2\, dx</m> both produce arbitrary constants.
+            Since both constants are arbitrary,
+            we combine them into a single constant of integration.
+          </p>
+        </aside>
+
         <p>
           This solution is a bit problematic.
           First, the absolute value makes the solution difficult to understand.
@@ -181,7 +169,7 @@
           the general solution must include the solution to that specific initial value problem.
           We can often satisfy any given initial condition by choosing an appropriate <m>C</m> value.
           When solving separable equations, though,
-          it is possible to lose solutions that have the form <m>y =</m> constant.
+          it is possible to lose solutions that have the form <m>y = \text{ constant}</m>.
           Notice that <m>y=0</m> solves the differential equation,
           but it is not possible to choose a finite <m>C</m> to make our solution look like <m>y=0</m>.
           Our solution cannot solve the initial value problem
@@ -192,7 +180,7 @@
         </p>
         <p>
           Recall the formal definition of the absolute value:
-          <m>|y| = y</m> if <m>y \geq 0</m> and <m>|y| =  -y</m> if <m>y \lt  0</m>.
+          <m>\abs{y} = y</m> if <m>y \geq 0</m> and <m>\abs{y} =  -y</m> if <m>y \lt  0</m>.
           Our solution is either <m>y = e^C e^{\frac{x^3}{3}}</m> or <m>y = - e^C e^{{\frac{x^3}{3}}}</m>.
           Further, note that <m>C</m> is constant,
           so <m>e^C</m> is also constant.
@@ -208,24 +196,20 @@
         </p>
       </solution>
     </example>
-    <p>
-      \checkoddpage\ifoddpage\setboolean{oddpg}{true}\else\setboolean{oddpg}{false}\fi \AddToShipoutPicture*{\put(427,\LenToUnit{.72\paperheight}){ \begin{minipage} <em>Note:</em>
-      The indefinite integrals <m>\int \frac{dy}{y}</m> and
-      <m>\int x^2\, dx</m> both produce arbitrary constants.
-      Since both constants are arbitrary,
-      we combine them into a single constant of integration. \end{minipage}}}
-    </p>
-    <p>
-      \checkoddpage\ifoddpage\setboolean{oddpg}{true}\else\setboolean{oddpg}{false}\fi \AddToShipoutPicture*{\put(427,\LenToUnit{.4\paperheight}){ \begin{minipage} <em>Note:</em>
-      Missing constant solutions can't always be recovered by cleverly redefining the arbitrary constant.
-      The differential equation <m>\yp = y^2 - 1</m> is an example of this fact.
-      Both <m>y=1</m> and <m>y=-1</m> are constant solutions to this differential equation.
-      Separation of variables yields a solution where <m>y=1</m> can be attained by choosing an appropriate <m>C</m> value,
-      but <m>y=-1</m> can't.
-      The general solution is the set containing the solution produced by separation of variables <em>and</em>
-      the missing solution <m>y=-1</m>.
-      We should always be careful to look for missing constant solutions when seeking the general solution to a separable differential equation. \end{minipage}}}
-    </p>
+
+    <aside>
+      <p>
+        Missing constant solutions can't always be recovered by cleverly redefining the arbitrary constant.
+        The differential equation <m>\yp = y^2 - 1</m> is an example of this fact.
+        Both <m>y=1</m> and <m>y=-1</m> are constant solutions to this differential equation.
+        Separation of variables yields a solution where <m>y=1</m> can be attained by choosing an appropriate <m>C</m> value,
+        but <m>y=-1</m> can't.
+        The general solution is the set containing the solution produced by separation of variables <em>and</em>
+        the missing solution <m>y=-1</m>.
+        We should always be careful to look for missing constant solutions when seeking the general solution to a separable differential equation.
+      </p>
+    </aside>
+
     <example xml:id="ex_separable_IVP">
       <title>Solving a Separable Initial Value Problem</title>
       <statement>
@@ -276,7 +260,8 @@
       </statement>
       <solution>
         <p>
-          We start by observing that there are no constant solutions to this differential equation because there are no constant <m>y</m> values that make the right hand side of the equation identically zero.
+          We start by observing that there are no constant solutions to this differential equation because there are no constant <m>y</m>
+          values that make the right hand side of the equation identically zero.
           Thus, we need not worry about losing solutions during the separation of variables process.
           The separated form of the equation is given by
           <me>
@@ -330,13 +315,13 @@
         <p>
           Then an implicit form of the solution is given by
           <me>
-            \ln |y| - \ln |M-y| = kt + C
+            \ln \abs{y} - \ln \abs{M-y} = kt + C
           </me>.
         </p>
         <p>
           Combining the logarithms,
           <me>
-            \ln \left | \frac{y}{M-y} \right |= kt + C
+            \ln \abs{\frac{y}{M-y}} = kt + C
           </me>.
         </p>
         <p>
@@ -361,271 +346,286 @@
         </p>
       </solution>
     </example>
-    <p>
-      \checkoddpage\ifoddpage\setboolean{oddpg}{true}\else\setboolean{oddpg}{false}\fi \AddToShipoutPicture*{\put(427,\LenToUnit{.35\paperheight}){ \begin{minipage} <em>Note:</em>
-      Solving for <m>y</m> initially yields the explicit solution <m>\displaystyle y = \frac{AMe^{kt}}{1+Ae^{kt}}</m>.
-      Dividing numerator and denominator by <m>Ae^{kt}</m> and defining <m>b = 1/A</m> yields the commonly presented form of the solution given in <xref ref="ex_logistic">Example</xref>. \end{minipage}}}
-    </p>
+
+    <aside>
+      <p>
+        Solving for <m>y</m> initially yields the explicit solution <m>\displaystyle y = \frac{AMe^{kt}}{1+Ae^{kt}}</m>.
+        Dividing numerator and denominator by <m>Ae^{kt}</m> and defining <m>b = 1/A</m>
+        yields the commonly presented form of the solution given in <xref ref="ex_logistic">Example</xref>.
+      </p>
+    </aside>
   </subsection>
-  <subsection>
-    <title>Problems</title>
-    <p>
-      In the following exercises,
-      decide whether the differential equation is separable or not separable.
-      If the equation is separable. write it in separated form.
-    </p>
-    <exercise>
-      <statement>
+
+  <exercises>
+    <exercisegroup>
+      <introduction>
         <p>
-          <m>\displaystyle \yp = y^2 - y</m>
+          In the following exercises,
+          decide whether the differential equation is separable or not separable.
+          If the equation is separable. write it in separated form.
         </p>
-      </statement>
-      <answer>
+      </introduction>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = y^2 - y</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Separable.
+            <m>\displaystyle \frac{1}{y^2-y}\,dy = dx</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle x\yp + x^2y = \frac{\sin x}{x-y}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Not separable.
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle (y + 3)\yp + (\ln x) \yp - x\sin y = (y+3)\ln x</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Not separable.
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp -x^2\cos y + y = \cos y - x^2 y</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Separable.
+            <m>\displaystyle \frac{1}{\cos y - y}\,dy = (x^2+1)\,dx</m>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
         <p>
-          Separable.
-          <m>\displaystyle \frac{1}{y^2-y}\,dy = dx</m>
+          In the following exercises,
+          find the general solution to the separable differential equation.
+          Be sure to check for missing constant solutions.
         </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
+      </introduction>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp +1 - y^2 = 0</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\left \{ \displaystyle y = \frac{1 + Ce^{2x}}{1 - Ce^{2x}}, y = -1\right \}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = y-2</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = 2 + Ce^x</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle x \yp = 4y</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y = Cx^4</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle y\yp = 4x</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y^2 - 4x^2 = C</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle e^xy \yp = e^{-y} + e^{-2x - y}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\displaystyle (y-1)e^y = -e^{-x} - \frac{1}{3}e^{-3x} + C</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle (x^2 + 1) \yp = \frac{x}{y-1}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\displaystyle (y-1)^2 = \ln(x^2+1) + C</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = \frac{x\sqrt{1-4y^2}}{x^4 + 2x^2 + 2}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\left \{ \arcsin{2y} - \arctan(x^2+1) = C, y = \pm \displaystyle \frac{1}{2} \right \}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle (e^x + e^{-x})\yp = y^2</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\left \{ \displaystyle y = \frac{1}{C - \arctan x}, y = 0 \right \}</m>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <introduction>
         <p>
-          <m>\displaystyle x\yp + x^2y = \frac{\sin x}{x-y}</m>
+          In the following exercises,
+          find the particular solution to the separable initial value problem.
         </p>
-      </statement>
-      <answer>
-        <p>
-          Not separable.
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle (y + 3)\yp + (\ln x) \yp - x\sin y = (y+3)\ln x</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          Not separable.
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp -x^2\cos y + y = \cos y - x^2 y</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          Separable.
-          <m>\displaystyle \frac{1}{\cos y - y}\,dy = (x^2+1)\,dx</m>
-        </p>
-      </answer>
-    </exercise>
-    <p>
-      In the following exercises,
-      find the general solution to the separable differential equation.
-      Be sure to check for missing constant solutions.
-    </p>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp +1 - y^2 = 0</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\left \{ \displaystyle y = \frac{1 + Ce^{2x}}{1 - Ce^{2x}}, y = -1\right \}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp = y-2</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = 2 + Ce^x</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle x \yp = 4y</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y = Cx^4</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle y\yp = 4x</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y^2 - 4x^2 = C</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle e^xy \yp = e^{-y} + e^{-2x - y}</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\displaystyle (y-1)e^y = -e^{-x} - \frac{1}{3}e^{-3x} + C</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle (x^2 + 1) \yp = \frac{x}{y-1}</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\displaystyle (y-1)^2 = \ln(x^2+1) + C</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp = \frac{x\sqrt{1-4y^2}}{x^4 + 2x^2 + 2}</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\left \{ \arcsin{2y} - \arctan(x^2+1) = C, y = \pm \displaystyle \frac{1}{2} \right \}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle (e^x + e^{-x})\yp = y^2</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\left \{ \displaystyle y = \frac{1}{C - \arctan x}, y = 0 \right \}</m>
-        </p>
-      </answer>
-    </exercise>
-    <p>
-      } In the following exercises,
-      find the particular solution to the separable initial value problem.
-    </p>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp = \frac{\sin x}{\cos y}</m>,
-          with <m>y(0) = \displaystyle \frac{\pi}{2}</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\sin y + \cos x = 2</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp = \frac{x^2}{1-y^2}</m>, with <m>y(0) = 1</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>-x^3 + 3y - y^3 = 2</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp = \frac{2x}{y+x^2y}</m>, with <m>y(0) = -4</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\frac{1}{2}y^2 - \ln(1+x^2) = 8</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle x + ye^{-x}\yp = 0</m>, with <m>y(0) = -2</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>y^2+2xe^x - 2e^x = 2</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp = \frac{x\ln(x^2+1)}{y-1}</m>, with <m>y(0) = 2</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\displaystyle \frac{1}{2}y^2 - y = \frac{1}{2}\big ( (x^2+1)\ln(x^2+1) - (x^2 + 1)\big) + \frac{1}{2}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \sqrt{1-x^2}\,\yp - \frac{\arcsin x}{y\cos(y^2)}= 0</m>,
-          with <m>y(0) = \sqrt{\displaystyle\frac{7\pi}{6}}</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\sin(y^2)-(\arcsin x)^2 = -\frac{1}{2}</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp = (\cos^2x)(\cos^2 2y)</m>, with <m>y(0) = 0</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>2\tan 2y = 2x + \sin 2x</m>
-        </p>
-      </answer>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          <m>\displaystyle \yp = \frac{y^2\sqrt{1-y^2}}{x}</m>, with <m>y(0) = 1</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>x = exp \displaystyle \left ( -\frac{\sqrt{1-y^2}}{y}\right )</m>
-        </p>
-      </answer>
-    </exercise>
-  </subsection>
+      </introduction>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = \frac{\sin x}{\cos y}</m>,
+            with <m>y(0) = \displaystyle \frac{\pi}{2}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\sin y + \cos x = 2</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = \frac{x^2}{1-y^2}</m>, with <m>y(0) = 1</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>-x^3 + 3y - y^3 = 2</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = \frac{2x}{y+x^2y}</m>, with <m>y(0) = -4</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\frac{1}{2}y^2 - \ln(1+x^2) = 8</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle x + ye^{-x}\yp = 0</m>, with <m>y(0) = -2</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>y^2+2xe^x - 2e^x = 2</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = \frac{x\ln(x^2+1)}{y-1}</m>, with <m>y(0) = 2</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\displaystyle \frac{1}{2}y^2 - y = \frac{1}{2}\big ( (x^2+1)\ln(x^2+1) - (x^2 + 1)\big) + \frac{1}{2}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \sqrt{1-x^2}\,\yp - \frac{\arcsin x}{y\cos(y^2)}= 0</m>,
+            with <m>y(0) = \sqrt{\displaystyle\frac{7\pi}{6}}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\sin(y^2)-(\arcsin x)^2 = -\frac{1}{2}</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = (\cos^2x)(\cos^2 2y)</m>, with <m>y(0) = 0</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>2\tan 2y = 2x + \sin 2x</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\displaystyle \yp = \frac{y^2\sqrt{1-y^2}}{x}</m>, with <m>y(0) = 1</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>x = exp \displaystyle \left ( -\frac{\sqrt{1-y^2}}{y}\right )</m>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+  </exercises>
 </section>
