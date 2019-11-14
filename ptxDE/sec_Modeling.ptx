@@ -2,7 +2,6 @@
   <title>Modeling with Differential Equations</title>
   <introduction>
     <p>
-          <idx><h>differential equation</h><h>modeling</h></idx>
       In the first three sections of this chapter,
       we focused on the basic ideas behind differential equations and the mechanics of solving certain types of differential equations.
       We have only hinted at their practical use.
@@ -10,6 +9,7 @@
       we use differential equations for mathematical modeling,
       the process of using equations to describe real world processes.
       We explore a few different mathematical models with the goal of gaining an introduction to this large field of applied mathematics.
+      <idx><h>differential equation</h><h>modeling</h></idx>
     </p>
   </introduction>
   <subsection xml:id="fig_20_translation">
@@ -20,8 +20,14 @@
       we considered a population that grows at a rate proportional to the current population.
       The words in this assumption can be directly translated into a differential equation as shown below.
     </p>
+
+    <figure>
+      <caption>Translating words into a differential equation</caption>
+      <img src="figures/fig20_04_translation"/>
+    </figure>
+
     <p>
-      <img src="figures/fig20_04_translation"/> \captionof{figure}{Translating words into a differential equation.} There are some key ideas that can be helpful when translating words into a differential equation.
+      There are some key ideas that can be helpful when translating words into a differential equation.
       Any time we see something about rates or changes,
       we should think about derivatives.
       The word
@@ -47,12 +53,12 @@
       <title>Bacterial Growth</title>
       <statement>
         <p>
-              <idx><h>bacterial growth</h></idx>
           Suppose a population of <em>e-coli</em>
           bacteria grows at a rate proportional to the current population.
           If an initial popluation of 200 bacteria has grown to 1600 three hours later,
           find a function for the size of the population at time <m>t</m>,
           and use it to predict when the population size will reach 10,000.
+          <idx><h>bacterial growth</h></idx>
         </p>
       </statement>
       <solution>
@@ -86,14 +92,15 @@
     <p>
       Another example of porportional change is
       <em>Newton's Law of Cooling.</em>
-          <idx><h>Newton's Law of Cooling</h></idx>
       The laws of thermodynamics state that heat flows from areas of higher temperature to areas of lower temperature.
       A simple example is a hot object that cools down when placed in a cool room.
       Newton's Law of Cooling is the simple assumption that the temperature of the object changes at a rate proportional to the difference between the temperature of the object and the ambient temperature of the room.
-      If <m>T</m> is the temperature of the object and <m>A</m> is the constant ambient temperature, Newton's Law of Cooling can be expressed as the differential equation
+      If <m>T</m> is the temperature of the object and <m>A</m> is the constant ambient temperature,
+      Newton's Law of Cooling can be expressed as the differential equation
       <me>
         \frac{dT}{dt} = k(A - T)
       </me>.
+      <idx><h>Newton's Law of Cooling</h></idx>
     </p>
     <p>
       This differential equation is both linear and separable.
@@ -105,7 +112,7 @@
     <p>
       Then an implicit definition of the temperature is given by
       <me>
-        -\ln|A-T| = kt + C
+        -\ln\abs{A-T} = kt + C
       </me>.
     </p>
     <p>
@@ -121,14 +128,17 @@
       or zero to account for both cases of the absolution value and to catch the constant solution <m>T=A</m>.
       Notice that the temperature of the object approaches the ambient temperature in the limit as <m>t\to\infty</m>.
     </p>
-    <p>
-      \checkoddpage\ifoddpage\setboolean{oddpg}{true}\else\setboolean{oddpg}{false}\fi \AddToShipoutPicture*{\put(427,\LenToUnit{.5\paperheight}){ \begin{minipage} <em>Note:</em>
-      The equation <m>\displaystyle \frac{dT}{dt} = k(T-A)</m> is also a valid representation of Newton's Law of Cooling.
-      Intuition tells us that <m>T</m> will increase if <m>T</m> is less than <m>A</m> and decrease if <m>T</m> is greater then <m>A</m>.
-      The form we use in the text follows this intuition with a positive <m>k</m> value.
-      The form above will require that <m>k</m> take on a negative value.
-      In the end, both forms result in the same function. \end{minipage}}}
-    </p>
+
+    <aside>
+      <p>
+        The equation <m>\displaystyle \frac{dT}{dt} = k(T-A)</m> is also a valid representation of Newton's Law of Cooling.
+        Intuition tells us that <m>T</m> will increase if <m>T</m> is less than <m>A</m> and decrease if <m>T</m> is greater then <m>A</m>.
+        The form we use in the text follows this intuition with a positive <m>k</m> value.
+        The form above will require that <m>k</m> take on a negative value.
+        In the end, both forms result in the same function.
+      </p>
+    </aside>
+
     <example xml:id="ex_coffee">
       <title>Hot Coffee</title>
       <statement>
@@ -279,36 +289,16 @@
       (regularly seen in the context of chemical reactions)
       is often called the <em>law of mass action.</em>
     </p>
-    <p>
-      \appendixmtable{.4}{Plots of the functions from <xref ref="ex_disease_exponential">Example</xref> (dotted),
-      <xref ref="ex_disease_newton">Example</xref> (dashed),
-      and <xref ref="ex_disease_logistic">Example</xref> (solid).}{fig:disease}{
-    </p>
-    <tabular>
-      <row>
-        <cell><img src="figures/fig20_04_disease"/></cell>
-      </row>
-      <row>
-        <cell>(a)</cell>
-      </row>
-      <row>
-        <cell></cell>
-      </row>
-      <row>
-        <cell><img src="figures/fig20_04_disease1"/></cell>
-      </row>
-      <row>
-        <cell>(b)</cell>
-      </row>
-    </tabular>
+
+
     <example xml:id="ex_disease_logistic">
       <title>Disease Spread 3</title>
       <statement>
         <p>
-              <idx><h>differential equation</h><h>logistic</h></idx>
           Suppose a disease spreads through a population at a rate proportional to the product of the number of infected and uninfected individuals.
           If 5% of the population is sick initially and 10% of the population is sick one week later,
-          find a formula for the proportion of the population that is sick at time <m>t</m>
+          find a formula for the proportion of the population that is sick at time <m>t</m>.
+          <idx><h>differential equation</h><h>logistic</h></idx>
         </p>
       </statement>
       <solution>
@@ -342,13 +332,13 @@
           The three functions are shown in <xref ref="fig_disease">Figure</xref>.
           Notice that the logistic function mimics specific parts of the functions from <xref ref="ex_disease_exponential">Examples</xref>
           and <xref ref="ex_disease_newton"></xref>.
-          We see in <xref ref="fig_disease">Figure</xref>(a) that the logistic and exponential functions are virtually indistinguishable for small <m>t</m> values.
+          We see in <xref ref="fig_diseasea">Figure</xref> that the logistic and exponential functions are virtually indistinguishable for small <m>t</m> values.
           When there are few infected individuals and lots of susceptible individuals,
           the spread of a disease is largely determined by the number of sick people.
           The logistic curve captures this feature, and is
           <q>almost exponential</q>
           early on.
-          In <xref ref="fig_disease">Figure</xref>(b),
+          In <xref ref="fig_diseaseb">Figure</xref>,
           we see that the logistic curve leaves the exponential curve from <xref ref="ex_disease_exponential">Example</xref>
           and approaches the curve from <xref ref="ex_disease_newton">Example</xref>.
           This result implies that when most of the population is sick,
@@ -358,6 +348,22 @@
           <q>best</q>
           of the three.
         </p>
+        <figure xml:id="fig_disease">
+          <caption>Plots of the functions from <xref ref="ex_disease_exponential">Example</xref> (dotted),
+          <xref ref="ex_disease_newton">Example</xref> (dashed),
+          and <xref ref="ex_disease_logistic">Example</xref> (solid)</caption>
+          <sidebyside width="33%">
+            <figure xml:id="fig_diseasea">
+              <caption/>
+              <img src="figures/fig20_04_disease"/>
+            </figure>
+            <figure xml:id="fig_diseaseb">
+              <caption/>
+              <img src="figures/fig20_04_disease1"/>
+            </figure>
+          </sidebyside>
+        </figure>
+
       </solution>
     </example>
   </subsection>
