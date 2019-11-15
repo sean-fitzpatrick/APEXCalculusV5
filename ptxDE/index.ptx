@@ -209,7 +209,7 @@
     </frontmatter>
     <xi:include href="./chapter_differential_equations.ptx" />
     <backmatter>
-      <xi:include href="./bibliography.ptx" />
+      <!-- <xi:include href="./bibliography.ptx" /> -->
       <index>
         <title>Index</title>
         <index-list />

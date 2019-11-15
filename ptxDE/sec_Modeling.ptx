@@ -23,7 +23,7 @@
 
     <figure>
       <caption>Translating words into a differential equation</caption>
-      <image xml:id="img_20_04_translation">
+      <image xml:id="img_20_04_translation" width="40%">
         <description></description>
         <latex-image>
           \begin{tikzpicture}
@@ -615,7 +615,7 @@
           \addplot [firstcurvestyle,-,domain = 0:10, samples=50] {15-10*exp(-2/5*x)};
 
           \end{axis}
-          
+
           \node [right] at (myplot.right of origin) {\scriptsize $t$};
           \node [above] at (myplot.above origin) {\scriptsize $y$};
 
