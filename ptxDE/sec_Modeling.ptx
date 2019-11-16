@@ -597,32 +597,33 @@
           This corresponds to a bucket concentration of
           <m>15/5 = 3</m> g/L. It should not be surprising that salt concentration inside the tank will move to match the inflow salt concentration.
         </p>
+        <figure xml:id="fig_equal_flow">
+          <caption>Salt concentration at time <m>t</m>, from <xref ref="ex_equal_flow">Example</xref>.</caption>
+          <image xml:id="img_equal_flow" width="47%">
+            <description></description>
+            <latex-image>
+              \begin{tikzpicture}
+
+              \begin{axis}[
+                ymin=-.1,ymax=15.5,
+                xmin=-.1,xmax=10.3
+              ]
+
+              \addplot [firstcurvestyle,-,domain = 0:10, samples=50] {15-10*exp(-2/5*x)};
+
+              \end{axis}
+
+              \node [right] at (myplot.right of origin) {\scriptsize $t$};
+              \node [above] at (myplot.above origin) {\scriptsize $y$};
+
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
       </solution>
     </example>
 
-    <figure xml:id="fig_equal_flow">
-      <caption>Salt concentration at time <m>t</m>, from <xref ref="ex_equal_flow">Example</xref>.</caption>
-      <image xml:id="img_equal_flow">
-        <description></description>
-        <latex-image>
-          \begin{tikzpicture}
 
-          \begin{axis}[
-            ymin=-.1,ymax=15.5,
-            xmin=-.1,xmax=10.3
-          ]
-
-          \addplot [firstcurvestyle,-,domain = 0:10, samples=50] {15-10*exp(-2/5*x)};
-
-          \end{axis}
-
-          \node [right] at (myplot.right of origin) {\scriptsize $t$};
-          \node [above] at (myplot.above origin) {\scriptsize $y$};
-
-          \end{tikzpicture}
-        </latex-image>
-      </image>
-    </figure>
 
     <example xml:id="ex_unequal_flow">
       <title>Unequal Flow Rates</title>
